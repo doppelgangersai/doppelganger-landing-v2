@@ -4,7 +4,7 @@ import SocialIcons from './components/SocialIcons';
 
 export default function Hero() {
   return (
-    <section className='relative min-h-screen bg-gradient-to-br from-[#2D2A3D] to-[#151321] overflow-hidden '>
+    <section className='relative min-h-screen overflow-hidden '>
       <Header />
 
       {/* Background rings with centered blob */}

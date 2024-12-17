@@ -39,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${montserrat.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${montserrat.variable} antialiased `}
     >
-      <body>{children}</body>
+      <body className='bg-[#2D2A3D]'>{children}</body>
     </html>
   );
 }
