@@ -8,12 +8,12 @@ export default function Hero() {
       <Header />
 
       {/* Background rings with centered blob */}
-      <div className='absolute right-[130px] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10'>
+      <div className='absolute right-[130px] top-1/2 -translate-x-1/2 -translate-y-1/2'>
         {/* Blob hero image */}
         <Image src='/blob_hero.svg' alt='Blob Hero' width={270} height={270} />
 
         {/* Rings */}
-        {[...Array(18)].map((_, i) => (
+        {[...Array(24)].map((_, i) => (
           <div
             key={i}
             className={`absolute rounded-full border border-[#8F6EFF]`}
@@ -24,7 +24,7 @@ export default function Hero() {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              opacity: Math.max(0, (18 - i) / 24),
+              opacity: Math.max(0, (24 - i) / 24),
               zIndex: -1,
             }}
           />
@@ -35,8 +35,8 @@ export default function Hero() {
 
       {/* Content */}
       <div className='absolute top-1/2 -translate-y-1/2 w-full'>
-        <div className='relative z-10 max-w-7xl mx-auto px-4'>
-          <h1 className='font-montserrat text-[72px] leading-[80px] font-extrabold text-white max-w-3xl'>
+        <div className='relative z-[200] max-w-7xl mx-auto px-4'>
+          <h1 className='font-montserrat text-[72px] leading-[80px] font-extrabold text-white max-w-3xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] mix-blend-normal'>
             Your Data, Your AI,
             <span className='text-[#6C3AF8]'> Your Doppelganger</span>
           </h1>
