@@ -4,11 +4,11 @@ import SocialIcons from './components/SocialIcons';
 
 export default function Hero() {
   return (
-    <section className='relative min-h-screen bg-gradient-to-br from-[#2D2A3D] to-[#151321] overflow-hidden -mr-14'>
+    <section className='relative min-h-screen bg-gradient-to-br from-[#2D2A3D] to-[#151321] overflow-hidden '>
       <Header />
 
       {/* Background rings with centered blob */}
-      <div className='absolute right-[130px] top-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className='absolute right-[130px] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10'>
         {/* Blob hero image */}
         <Image src='/blob_hero.svg' alt='Blob Hero' width={270} height={270} />
 
@@ -25,6 +25,7 @@ export default function Hero() {
               left: '50%',
               transform: 'translate(-50%, -50%)',
               opacity: Math.max(0, (18 - i) / 24),
+              zIndex: -1,
             }}
           />
         ))}
