@@ -18,7 +18,7 @@ export default function Companion() {
             alt='Blob Hero'
             width={326}
             height={659}
-            className='absolute z-10 bottom-0 left-[107px]'
+            className='absolute z-10 -bottom-[100px] left-[107px]'
           />
 
           <div className='absolute bottom-[220px] left-[270px]'>
