@@ -20,6 +20,14 @@ export default function Connect() {
       />
 
       <Image
+        src='/arrow_1.png'
+        alt='Connect'
+        width={803}
+        height={398}
+        className='absolute z-10 top-0 right-[350px]'
+      />
+
+      <Image
         src='/phone_vault.png'
         alt='Connect'
         width={233}
