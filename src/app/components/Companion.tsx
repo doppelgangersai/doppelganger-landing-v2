@@ -41,9 +41,11 @@ export default function Companion() {
           </div>
         </div>
 
-        <div className='flex-1 flex flex-col gap-2 max-w-[694px]'>
-          <div className='flex items-center p-2 gap-2 w-[14px] h-[30px] rounded-[14px]'>
-            <span className='text-white text-xs'>01</span>
+        <div className='flex-1 flex flex-col gap-2 max-w-[694px] relative translate-x-[-26px] translate-y-[46px]'>
+          <div className='flex items-center gap-2 w-[14px] h-[30px]'>
+            <span className='font-roboto font-[400] text-white text-xs'>
+              01
+            </span>
           </div>
 
           <h1 className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full'>
