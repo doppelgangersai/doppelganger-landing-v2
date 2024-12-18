@@ -11,17 +11,17 @@ export default function Companion() {
         </h2>
       </div>
 
-      <div className='flex-1 flex justify-between items-center relative mt-20'>
-        <div className='relative flex-1'>
+      <div className='flex-1 flex justify-between items-center mt-20'>
+        <div>
           <Image
             src='/phone_blob.png'
             alt='Blob Hero'
             width={326}
             height={659}
-            className='absolute z-10 bottom-0'
+            className='absolute z-10 bottom-0 left-[107px]'
           />
 
-          <div className='absolute top-1/2 left-[170px]'>
+          <div className='absolute bottom-[220px] left-[270px]'>
             {[...Array(10)].map((_, i) => (
               <div
                 key={i}
@@ -46,9 +46,11 @@ export default function Companion() {
             <span className='text-white text-xs'>01</span>
           </div>
 
-          <h1 className='font-montserrat font-light text-[32px] leading-[39px] text-white w-full'>
+          <h1 className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full'>
             Great Way to Little Fun to Your{' '}
-            <span className='font-[800]'>Corporate World</span>
+            <span className='font-[800]'>
+              Corporate <br /> World
+            </span>
           </h1>
 
           <div className='flex justify-center items-center py-2 gap-2 '>
@@ -84,7 +86,7 @@ export default function Companion() {
             </div>
           ))}
 
-          <button className='flex flex-row justify-center items-center px-6 py-2 gap-2 w-[126px] h-[44px] bg-[#6C3AF8] rounded-[20px]'>
+          <button className='flex flex-row justify-center items-center px-6 py-2 gap-2 w-[126px] h-[44px] bg-[#6C3AF8] rounded-[20px] mt-[77px]'>
             <span className='font-roboto font-normal text-xs text-white'>
               Download App
             </span>
