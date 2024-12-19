@@ -4,7 +4,7 @@ import VideoSection from './VideoSection';
 import Companion from './components/Companion';
 import Connect from './components/Connect';
 import Privacy from './components/Privacy';
-
+import Team from './components/Team';
 export default function Home() {
   return (
     <>
@@ -13,6 +13,7 @@ export default function Home() {
       <Companion />
       <Connect />
       <Privacy />
+      <Team />
       <Footer />
     </>
   );

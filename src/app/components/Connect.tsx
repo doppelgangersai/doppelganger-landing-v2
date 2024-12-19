@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Connect() {
   return (
-    <section className='relative w-full h-screen flex justify-center items-center'>
-      <div className='relative max-w-[1440px] w-full h-full mx-auto'>
+    <section className='relative w-full h-screen flex justify-center items-center overflow-hidden'>
+      <div className='relative w-full h-full mx-auto'>
         <div className='absolute left-[6%] top-[20%] max-w-[566px]'>
           <h2 className='font-montserrat font-[800] text-[45px] leading-[45px] text-center text-white'>
             <span className='text-[#6C3AF8]'>Unlock</span> the true{' '}
