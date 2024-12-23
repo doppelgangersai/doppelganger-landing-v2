@@ -5,6 +5,7 @@ import Companion from './components/Companion';
 import Connect from './components/Connect';
 import Privacy from './components/Privacy';
 import Team from './components/Team';
+import News from './components/News';
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
       <Connect />
       <Privacy />
       <Team />
+      <News />
       <Footer />
     </>
   );
