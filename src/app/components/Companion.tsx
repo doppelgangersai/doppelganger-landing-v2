@@ -11,17 +11,16 @@ export default function Companion() {
         </h2>
       </div>
 
-      <div className='flex-1 flex justify-between items-center mt-20'>
-        <div>
+      <div className='flex flex-row gap-8 mt-[53px] h-full'>
+        <div className='w-1/2 flex justify-center items-center relative'>
           <Image
             src='/phone_blob.png'
             alt='Blob Hero'
             width={326}
             height={659}
-            className='absolute z-10 -bottom-[100px] left-[107px]'
           />
 
-          <div className='absolute bottom-[220px] left-[270px]'>
+          <div className='flex justify-center items-center'>
             {[...Array(10)].map((_, i) => (
               <div
                 key={i}
@@ -41,7 +40,7 @@ export default function Companion() {
           </div>
         </div>
 
-        <div className='flex-1 flex flex-col gap-2 max-w-[694px] relative translate-x-[-26px] translate-y-[46px]'>
+        <div className='w-1/2 gap-2 relative flex flex-col justify-center'>
           <div className='flex items-center gap-2 w-[14px] h-[30px]'>
             <span className='font-roboto font-[400] text-white text-xs'>
               01
