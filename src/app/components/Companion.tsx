@@ -14,7 +14,7 @@ export default function Companion() {
       <div className='flex flex-row gap-8 mt-[53px] h-full'>
         <div className='w-1/2 flex justify-center items-center relative'>
           <Image
-            src='/phone_blob.png'
+            src='/companion-phone.png'
             alt='Blob Hero'
             width={326}
             height={659}
