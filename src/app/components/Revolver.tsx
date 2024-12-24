@@ -133,6 +133,14 @@ export default function Revolver() {
               const x = radius * Math.cos((angle * Math.PI) / 180);
               const y = radius * Math.sin((angle * Math.PI) / 180);
 
+              const activeIndex = buttons.findIndex(
+                (b) => b.name === activeButton.name
+              );
+
+              const isNeighbor =
+                index === (activeIndex + 1) % buttons.length ||
+                index === (activeIndex - 1 + buttons.length) % buttons.length;
+
               return (
                 <div
                   key={button.name}
@@ -142,7 +150,8 @@ export default function Revolver() {
                       activeButton.name === button.name
                         ? 'scale-110'
                         : 'scale-100'
-                    }`}
+                    }
+                    ${isNeighbor ? 'opacity-0' : 'opacity-100'}`}
                   style={{
                     transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%)) rotate(${-rotation}deg)`,
                     left: '50%',
