@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Revolver.module.css';
 
@@ -73,12 +73,20 @@ const buttons: RevolverButton[] = [
 export default function Revolver() {
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
   const [rotation, setRotation] = useState(0);
+  const [displayedButton, setDisplayedButton] = useState<RevolverButton>(
+    buttons[0]
+  );
 
   const handleButtonClick = (button: RevolverButton) => {
-    setActiveButton(button);
     const currentIndex = buttons.findIndex((b) => b.name === button.name);
-    const angle = (360 / buttons.length) * currentIndex;
+    const angle = (360 / buttons.length) * currentIndex - 270;
     setRotation(-angle);
+
+    setTimeout(() => {
+      setDisplayedButton(button);
+    }, 700);
+
+    setActiveButton(button);
   };
 
   return (
@@ -159,15 +167,15 @@ export default function Revolver() {
           <div className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center'>
             <Image
               src='/robot_wrapper.svg'
-              alt={activeButton.name.toLowerCase()}
+              alt={displayedButton.name.toLowerCase()}
               width={334}
               height={457}
               className='w-[334px] h-[457px]'
             />
             <div className='flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white'>
               <Image
-                src={activeButton.icon}
-                alt={activeButton.name.toLowerCase()}
+                src={displayedButton.icon}
+                alt={displayedButton.name.toLowerCase()}
                 width={173}
                 height={259}
               />
@@ -176,10 +184,10 @@ export default function Revolver() {
 
           <div className='flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4'>
             <p className='font-[800] text-[40px] text-white leading-[49px]'>
-              {activeButton.name}
+              {displayedButton.name}
             </p>
             <p className='font-[400] text-white text-[20px] leading-[25px]'>
-              {activeButton.description}
+              {displayedButton.description}
             </p>
           </div>
         </div>
