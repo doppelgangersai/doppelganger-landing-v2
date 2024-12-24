@@ -101,27 +101,27 @@ export default function Revolver() {
         </h3>
       </div>
 
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className='absolute rounded-full border border-[#8F6EFF]'
-            style={{
-              width: `${375 + i * 50}px`,
-              height: `${375 + i * 50}px`,
-              filter: 'blur(0.625px)',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              opacity: Math.max(0, (10 - i) / 10),
-              zIndex: 0,
-            }}
-          />
-        ))}
-      </div>
-
       <div className='relative'>
         <div className='absolute top-[120px] left-[45%] w-[612px] h-[612px] flex items-center'>
+          <div className='absolute w-full h-full'>
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={i}
+                className='absolute rounded-full border border-[#8F6EFF]'
+                style={{
+                  width: `${412 + i * 50}px`,
+                  height: `${412 + i * 50}px`,
+                  filter: 'blur(0.625px)',
+                  top: '50%',
+                  left: 'calc(50% - 300px)',
+                  transform: 'translate(-50%, -50%)',
+                  opacity: Math.max(0, (10 - i) / 10),
+                  zIndex: 0,
+                }}
+              />
+            ))}
+          </div>
+
           <div
             className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
             style={{
