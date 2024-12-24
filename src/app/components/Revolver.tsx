@@ -96,35 +96,43 @@ export default function Revolver() {
       <div className='relative'>
         <div className='absolute top-[120px] left-[45%] w-[612px] h-[612px] flex items-center'>
           <div className='w-full h-full absolute rounded-full border-2 border-[#E27919] transition-colors duration-300'>
-            {buttons.map((button) => (
-              <button
-                key={button.name}
-                onClick={() => setActiveButton(button)}
-                className={`absolute p-0 border-none bg-transparent text-[#181624] transition-colors duration-300 
-                  ${button.color} ${getButtonPosition(button.name)}`}
-                style={{ transform: `rotate(${button.rotate}deg)` }}
-              >
-                <Image
-                  src={button.icon}
-                  alt={button.name.toLowerCase()}
-                  width={60}
-                  height={60}
-                />
+            {buttons.map((button, index) => {
+              const angle = (340 / buttons.length) * index - 90;
+              const radius = 306;
 
-                <span className='opacity-0 hover:opacity-100 text-white bg-[#181624] px-2.5 py-1.5 rounded absolute left-full -bottom-6 transition-opacity duration-300 font-semibold'>
-                  {button.name}
-                </span>
-              </button>
-            ))}
+              const x = radius * Math.cos((angle * Math.PI) / 180);
+              const y = radius * Math.sin((angle * Math.PI) / 180);
+
+              return (
+                <div
+                  key={button.name}
+                  onClick={() => setActiveButton(button)}
+                  className='absolute cursor-pointer bg-[#181624] text-[#fff] font-inter rounded-[12px] flex items-center justify-center'
+                  style={{
+                    transform: `translate(${x}px, ${y}px)`,
+                    left: '50%',
+                    top: '50%',
+                  }}
+                >
+                  <div
+                    className={`block ${button.color} transform -rotate-[${
+                      angle + 75
+                    }deg] whitespace-nowrap font-[600] text-[12px] leading-[16px] px-3 py-1.5`}
+                  >
+                    {button.name}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          <div className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2'>
+          <div className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center'>
             <Image
               src='/robot_wrapper.svg'
               alt={activeButton.name.toLowerCase()}
               width={334}
               height={457}
-              className='w-[334px] h-[457px] md:w-[167px] '
+              className='w-[334px] h-[457px]'
             />
             <div className='flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white'>
               <Image
@@ -133,29 +141,19 @@ export default function Revolver() {
                 width={173}
                 height={259}
               />
-              <span className='text-4xl leading-[46px] font-black md:text-xl md:leading-6'>
-                {activeButton.name}
-              </span>
             </div>
           </div>
 
-          <p className='pl-[200px] pr-[50px] text-white text-xl leading-[25px] md:hidden'>
-            {activeButton.description}
-          </p>
+          <div className='flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4'>
+            <p className='font-[800] text-[40px] text-white leading-[49px]'>
+              {activeButton.name}
+            </p>
+            <p className='font-[400] text-white text-[20px] leading-[25px]'>
+              {activeButton.description}
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
-}
-
-function getButtonPosition(name: string): string {
-  const positions = {
-    Share: 'left-[-5%] top-[45%]',
-    Chat: 'top-[85%] left-[14%]',
-    Connect: 'left-[57%] top-[94%]',
-    Monetize: 'left-[90%] top-[67%]',
-    Create: 'top-[27%] right-[-2%]',
-    Merge: 'top-[-3%] right-[28%]',
-  };
-  return positions[name as keyof typeof positions];
 }

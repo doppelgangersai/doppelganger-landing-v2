@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
 import { Roboto } from 'next/font/google';
@@ -33,6 +33,12 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700', '900'],
+  variable: '--font-inter',
+});
+
 export const metadata: Metadata = {
   title: 'Doppelgangers',
   description: 'Doppelgangers',
@@ -46,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${montserrat.variable} ${roboto.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${montserrat.variable} ${roboto.variable} ${inter.variable} antialiased`}
     >
       <body className='bg-[#2D2A3D]'>{children}</body>
     </html>
