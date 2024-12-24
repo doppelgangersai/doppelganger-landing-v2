@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import styles from './Revolver.module.css';
 
 interface RevolverButton {
   name: string;
@@ -135,7 +136,12 @@ export default function Revolver() {
                   }}
                 >
                   <div
-                    className={`block whitespace-nowrap font-[600] text-[12px] leading-[16px] px-3 py-1.5 transition-colors text-white hover:text-[${button.color}]`}
+                    className={styles.buttonText}
+                    style={
+                      {
+                        '--button-color': button.color,
+                      } as React.CSSProperties
+                    }
                   >
                     {button.name}
                   </div>
