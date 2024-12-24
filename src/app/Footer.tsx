@@ -45,7 +45,7 @@ export default function Footer() {
                   height={300}
                   className='absolute right-[-200px] bottom-[-100px] rounded-lg'
                 />
-                <p className='absolute right-[-300px] bottom-[-75px] plus-jakarta-sans text-[#fff] text-[14px] font-[300] text-center whitespace-nowrap'>
+                <p className='absolute right-[-300px] bottom-[-75px] font-sans text-[#fff] text-[14px] font-[300] text-center whitespace-nowrap'>
                   Download our app on:
                   <br />
                   Appstore & Google play
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className='col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'>
+          <div className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'>
             {/* Help Section */}
             <div className='flex flex-col items-end'>
               <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
@@ -80,7 +80,7 @@ export default function Footer() {
 
             {/* Legal Info Section */}
             <div className='flex flex-col items-end'>
-              <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
+              <h3 className='text-white font-[800] text-[20px] mb-2 h-[24px]'>
                 Legal Info
               </h3>
               <ul className='space-y-1 text-right'>
