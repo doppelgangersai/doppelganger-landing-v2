@@ -71,20 +71,23 @@ const buttons: RevolverButton[] = [
 ];
 
 export default function Revolver() {
+  const [rotation, setRotation] = useState(270);
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
-  const [rotation, setRotation] = useState(0);
   const [displayedButton, setDisplayedButton] = useState<RevolverButton>(
     buttons[0]
   );
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleButtonClick = (button: RevolverButton) => {
     const currentIndex = buttons.findIndex((b) => b.name === button.name);
     const angle = (360 / buttons.length) * currentIndex - 270;
     setRotation(-angle);
+    setIsTransitioning(true);
 
     setTimeout(() => {
       setDisplayedButton(button);
-    }, 700);
+      setIsTransitioning(false);
+    }, 350);
 
     setActiveButton(button);
   };
@@ -181,7 +184,12 @@ export default function Revolver() {
               height={457}
               className='w-[334px] h-[457px]'
             />
-            <div className='flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white'>
+            <div
+              className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
+              ${
+                isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+              }`}
+            >
               <Image
                 src={displayedButton.icon}
                 alt={displayedButton.name.toLowerCase()}
@@ -191,7 +199,14 @@ export default function Revolver() {
             </div>
           </div>
 
-          <div className='flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4'>
+          <div
+            className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4 transition-all duration-700 ease-in-out
+            ${
+              isTransitioning
+                ? 'opacity-0 translate-y-4'
+                : 'opacity-100 translate-y-0'
+            }`}
+          >
             <p className='font-[800] text-[40px] text-white leading-[49px]'>
               {displayedButton.name}
             </p>
