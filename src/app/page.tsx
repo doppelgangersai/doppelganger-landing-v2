@@ -6,6 +6,8 @@ import Connect from './components/Connect';
 import Privacy from './components/Privacy';
 import Team from './components/Team';
 import News from './components/News';
+import Revolver from './components/Revolver';
+
 export default function Home() {
   return (
     <>
@@ -13,6 +15,7 @@ export default function Home() {
       <VideoSection />
       <Companion />
       <Connect />
+      <Revolver />
       <Privacy />
       <Team />
       <News />
