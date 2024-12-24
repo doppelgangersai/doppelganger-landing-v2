@@ -64,6 +64,15 @@ const buttons: RevolverButton[] = [
 
 export default function Revolver() {
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
+  const [rotation, setRotation] = useState(0);
+
+  const handleButtonClick = (button: RevolverButton) => {
+    setActiveButton(button);
+    // Вычисляем кратчайший путь поворота
+    const currentIndex = buttons.findIndex((b) => b.name === button.name);
+    const angle = (360 / buttons.length) * currentIndex;
+    setRotation(-angle);
+  };
 
   return (
     <section className='relative w-full h-screen flex flex-col'>
@@ -96,11 +105,14 @@ export default function Revolver() {
       <div className='relative'>
         <div className='absolute top-[120px] left-[45%] w-[612px] h-[612px] flex items-center'>
           <div
-            className='w-full h-full absolute rounded-full border-2 transition-colors duration-300'
-            style={{ borderColor: activeButton.color }}
+            className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
+            style={{
+              borderColor: activeButton.color,
+              transform: `rotate(${rotation}deg)`,
+            }}
           >
             {buttons.map((button, index) => {
-              const angle = (340 / buttons.length) * index - 90;
+              const angle = (360 / buttons.length) * index - 90;
               const radius = 306;
 
               const x = radius * Math.cos((angle * Math.PI) / 180);
@@ -109,18 +121,21 @@ export default function Revolver() {
               return (
                 <div
                   key={button.name}
-                  onClick={() => setActiveButton(button)}
-                  className='absolute cursor-pointer bg-[#181624] text-[#fff] font-inter rounded-[12px] flex items-center justify-center'
+                  onClick={() => handleButtonClick(button)}
+                  className={`absolute cursor-pointer bg-[#181624] text-[#fff] font-inter rounded-[12px] flex items-center justify-center transition-all duration-700 
+                    ${
+                      activeButton.name === button.name
+                        ? 'scale-110'
+                        : 'scale-100'
+                    }`}
                   style={{
-                    transform: `translate(${x}px, ${y}px)`,
+                    transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%)) rotate(${-rotation}deg)`,
                     left: '50%',
                     top: '50%',
                   }}
                 >
                   <div
-                    className={`block ${button.color} transform -rotate-[${
-                      angle + 75
-                    }deg] whitespace-nowrap font-[600] text-[12px] leading-[16px] px-3 py-1.5`}
+                    className={`block whitespace-nowrap font-[600] text-[12px] leading-[16px] px-3 py-1.5 transition-colors text-white hover:text-[${button.color}]`}
                   >
                     {button.name}
                   </div>
