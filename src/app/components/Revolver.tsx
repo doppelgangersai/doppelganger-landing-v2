@@ -102,7 +102,7 @@ export default function Revolver() {
       </div>
 
       <div className='relative'>
-        <div className='absolute top-[120px] left-[45%] w-[612px] h-[612px] flex items-center'>
+        <div className='absolute top-[120px] left-[45%] w-[550px] h-[550px] flex items-center'>
           <div className='absolute w-full h-full'>
             {[...Array(10)].map((_, i) => (
               <div
@@ -113,7 +113,7 @@ export default function Revolver() {
                   height: `${412 + i * 50}px`,
                   filter: 'blur(0.625px)',
                   top: '50%',
-                  left: 'calc(50% - 300px)',
+                  left: 'calc(50% - 290px)',
                   transform: 'translate(-50%, -50%)',
                   opacity: Math.max(0, (10 - i) / 10),
                   zIndex: 0,
@@ -131,7 +131,7 @@ export default function Revolver() {
           >
             {buttons.map((button, index) => {
               const angle = (360 / buttons.length) * index - 90;
-              const radius = 306;
+              const radius = 275;
 
               const x = radius * Math.cos((angle * Math.PI) / 180);
               const y = radius * Math.sin((angle * Math.PI) / 180);
