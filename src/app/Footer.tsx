@@ -57,35 +57,13 @@ export default function Footer() {
           {/* Navigation Links */}
           <div className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'>
             {/* Help Section */}
-            <div className='flex flex-col items-end'>
-              <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
-                Help
-              </h3>
-              <ul className='space-y-1 text-right'>
-                {['Referral Program', 'Contact Us', 'FAQ'].map((item) => (
-                  <li
-                    key={item}
-                    className='opacity-50 hover:opacity-100 transition-opacity'
-                  >
-                    <Link
-                      href='#'
-                      className='text-white text-[14px] font-light'
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal Info Section */}
-            <div className='flex flex-col items-end'>
-              <h3 className='text-white font-[800] text-[20px] mb-2 h-[24px]'>
-                Legal Info
-              </h3>
-              <ul className='space-y-1 text-right'>
-                {['Terms & Conditions', 'Privacy Policy', 'About Us'].map(
-                  (item) => (
+            <div className='flex flex-row items-top justify-center gap-10'>
+              <div className='flex flex-col items-end'>
+                <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
+                  Help
+                </h3>
+                <ul className='space-y-1 text-right'>
+                  {['Referral Program', 'Contact Us', 'FAQ'].map((item) => (
                     <li
                       key={item}
                       className='opacity-50 hover:opacity-100 transition-opacity'
@@ -97,31 +75,55 @@ export default function Footer() {
                         {item}
                       </Link>
                     </li>
-                  )
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Follow Us Section */}
-            <div className='flex flex-col items-end'>
-              <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
-                Follow Us
-              </h3>
-              <ul className='space-y-1 text-right'>
-                {['Facebook', 'Instagram', 'LinkedIn', 'X'].map((item) => (
-                  <li
-                    key={item}
-                    className='opacity-50 hover:opacity-100 transition-opacity'
-                  >
-                    <Link
-                      href='#'
-                      className='text-white text-[14px] font-light'
+              {/* Legal Info Section */}
+              <div className='flex flex-col items-end'>
+                <h3 className='text-white font-[800] text-[20px] mb-2 h-[24px]'>
+                  Legal Info
+                </h3>
+                <ul className='space-y-1 text-right'>
+                  {['Terms & Conditions', 'Privacy Policy', 'About Us'].map(
+                    (item) => (
+                      <li
+                        key={item}
+                        className='opacity-50 hover:opacity-100 transition-opacity'
+                      >
+                        <Link
+                          href='#'
+                          className='text-white text-[14px] font-light'
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+
+              {/* Follow Us Section */}
+              <div className='flex flex-col items-end'>
+                <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
+                  Follow Us
+                </h3>
+                <ul className='space-y-1 text-right'>
+                  {['Facebook', 'Instagram', 'LinkedIn', 'X'].map((item) => (
+                    <li
+                      key={item}
+                      className='opacity-50 hover:opacity-100 transition-opacity'
                     >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                      <Link
+                        href='#'
+                        className='text-white text-[14px] font-light'
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
