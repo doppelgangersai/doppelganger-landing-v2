@@ -18,7 +18,7 @@ const buttons: RevolverButton[] = [
     description:
       'Share your twin with your friends, family, girlfriend or boyfriend, but remember doppelgangers can’t lie. Do you have anything to hide?',
     icon: '/personal_coach.png',
-    color: 'hover:text-[#E27919]',
+    color: '#E27919',
   },
   {
     name: 'Chat',
@@ -26,7 +26,7 @@ const buttons: RevolverButton[] = [
     description:
       "Chat with your or other user's twins or even allow your twin to connect with other twins, who knows maybe they'll find you a new friend or conspire to take over the world",
     icon: '/personal_coach.png',
-    color: 'hover:text-[#4CAF50]',
+    color: '#4CAF50',
   },
   {
     name: 'Connect',
@@ -34,7 +34,7 @@ const buttons: RevolverButton[] = [
     description:
       'Connect your Doppelganger to your group chats on social media, messengers or your email accounts via our API to outsource your daily repetitive tasks',
     icon: '/personal_coach.png',
-    color: 'hover:text-[#2196F3]',
+    color: '#2196F3',
   },
   {
     name: 'Monetize',
@@ -42,7 +42,7 @@ const buttons: RevolverButton[] = [
     description:
       'Monetize your doppelganger via paid chat or share your expertise, knowledge and experiences by offering your dataset to other users for training of their twins',
     icon: '/personal_coach.png',
-    color: 'hover:text-[#9C27B0]',
+    color: '#9C27B0',
   },
   {
     name: 'Create',
@@ -50,7 +50,7 @@ const buttons: RevolverButton[] = [
     description:
       'Create application specific chatbots by further training your twin for a specific role like personal assistant, sales bot, support bot, digital girlfriend/boyfriend ect.',
     icon: '/personal_coach.png',
-    color: 'hover:text-[#FF5722]',
+    color: '#FF5722',
   },
   {
     name: 'Merge',
@@ -58,7 +58,7 @@ const buttons: RevolverButton[] = [
     description:
       'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
     icon: '/personal_coach.png',
-    color: 'hover:text-[#E27919]',
+    color: '#E27919',
   },
 ];
 
@@ -95,7 +95,10 @@ export default function Revolver() {
 
       <div className='relative'>
         <div className='absolute top-[120px] left-[45%] w-[612px] h-[612px] flex items-center'>
-          <div className='w-full h-full absolute rounded-full border-2 border-[#E27919] transition-colors duration-300'>
+          <div
+            className='w-full h-full absolute rounded-full border-2 transition-colors duration-300'
+            style={{ borderColor: activeButton.color }}
+          >
             {buttons.map((button, index) => {
               const angle = (340 / buttons.length) * index - 90;
               const radius = 306;
