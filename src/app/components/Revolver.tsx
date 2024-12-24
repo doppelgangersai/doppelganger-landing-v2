@@ -16,56 +16,56 @@ const buttons: RevolverButton[] = [
     name: 'Personal Coach',
     description:
       "Share your twin with your friends, family, girlfriend or boyfriend, but remember doppelgangers can't lie. Do you have anything to hide?",
-    icon: '/personal_coach.png',
+    icon: '/robots/coach 2.png',
     color: '#E27919',
   },
   {
     name: 'Therapist',
     description:
       "Chat with your or other user's twins or even allow your twin to connect with other twins, who knows maybe they'll find you a new friend or conspire to take over the world",
-    icon: '/robots/therapist.png',
+    icon: '/robots/therapist 2.png',
     color: '#4CAF50',
   },
   {
     name: 'Personal Assistant',
     description:
       'Connect your Doppelganger to your group chats on social media, messengers or your email accounts via our API to outsource your daily repetitive tasks',
-    icon: '/personal_coach.png',
+    icon: '/robots/assistant 2.png',
     color: '#2196F3',
   },
   {
     name: 'Sport',
     description:
       'Monetize your doppelganger via paid chat or share your expertise, knowledge and experiences by offering your dataset to other users for training of their twins',
-    icon: '/personal_coach.png',
+    icon: '/robots/sport 2.png',
     color: '#9C27B0',
   },
   {
     name: 'Fitness Coach',
     description:
       'Create application specific chatbots by further training your twin for a specific role like personal assistant, sales bot, support bot, digital girlfriend/boyfriend ect.',
-    icon: '/personal_coach.png',
+    icon: '/robots/sunglasses 1.png',
     color: '#FF5722',
   },
   {
     name: 'Social Media Manager',
     description:
       'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/personal_coach.png',
+    icon: '/robots/news 2.png',
     color: '#E27919',
   },
   {
     name: 'Dating Agent',
     description:
       'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/personal_coach.png',
+    icon: '/robots/tt 2.png',
     color: '#E27919',
   },
   {
     name: 'Recruiter Agent',
     description:
       'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/personal_coach.png',
+    icon: '/robots/tree 2.png',
     color: '#E27919',
   },
 ];
