@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Image from 'next/image';
 import SocialIcons from './components/SocialIcons';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
@@ -36,10 +37,23 @@ export default function Hero() {
       {/* Content */}
       <div className='absolute top-1/2 -translate-y-1/2 w-full'>
         <div className='relative z-[200] max-w-7xl mx-auto px-4'>
-          <h1 className='font-montserrat text-[72px] leading-[80px] font-extrabold text-white max-w-3xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] mix-blend-normal'>
+          <motion.h1
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className='font-montserrat text-[72px] leading-[80px] font-extrabold text-white max-w-3xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] mix-blend-normal'
+          >
             Your Data, Your AI,
-            <span className='text-[#6C3AF8]'> Your Doppelganger</span>
-          </h1>
+            <motion.span
+              initial={{ color: '#FFFFFF' }}
+              animate={{ color: '#6C3AF8' }}
+              transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+              className='text-[#6C3AF8]'
+            >
+              {' '}
+              Your Doppelganger
+            </motion.span>
+          </motion.h1>
         </div>
       </div>
     </section>
