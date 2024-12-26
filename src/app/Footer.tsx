@@ -2,15 +2,35 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  const isInView = useInView(footerRef, { once: false, amount: 0.3 });
+
   return (
-    <footer className='relative h-screen w-[1440px] m-auto scroll-smooth'>
+    <footer
+      ref={footerRef}
+      className='relative h-screen w-[1440px] m-auto scroll-smooth'
+    >
       {/* Main Container */}
       <div className='container mx-auto h-full'>
         <div className='grid h-full grid-cols-12 gap-4 relative'>
           {/* Concentric Circles */}
-          <div className='absolute left-[15%] top-1/2 -translate-y-1/2'>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
+            transition={{
+              duration: 1.2,
+              type: 'spring',
+              bounce: 0.4,
+            }}
+            className='absolute left-[15%] top-1/2 -translate-y-1/2'
+          >
             {[...Array(24)].map((_, i) => (
               <div
                 key={i}
@@ -52,13 +72,25 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Navigation Links */}
-          <div className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'>
-            {/* Help Section */}
+          {/* Navigation Links with stagger animation */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'
+          >
             <div className='flex flex-row items-top justify-center gap-10'>
-              <div className='flex flex-col items-end'>
+              {/* Help Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className='flex flex-col items-end'
+              >
                 <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
                   Help
                 </h3>
@@ -77,10 +109,17 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
               {/* Legal Info Section */}
-              <div className='flex flex-col items-end'>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className='flex flex-col items-end'
+              >
                 <h3 className='text-white font-[800] text-[20px] mb-2 h-[24px]'>
                   Legal Info
                 </h3>
@@ -101,10 +140,17 @@ export default function Footer() {
                     )
                   )}
                 </ul>
-              </div>
+              </motion.div>
 
               {/* Follow Us Section */}
-              <div className='flex flex-col items-end'>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className='flex flex-col items-end'
+              >
                 <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
                   Follow Us
                 </h3>
@@ -123,16 +169,21 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Copyright Section */}
-          <div className='absolute bottom-20 right-0 left-0 flex justify-end px-4 z-10'>
+          {/* Copyright Section with fade up animation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className='absolute bottom-20 right-0 left-0 flex justify-end px-4 z-10'
+          >
             <p className='text-white/50 text-[14px] font-light'>
               © 2024 Doppelgangers.ai All right reserved
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>
