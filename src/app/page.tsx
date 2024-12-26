@@ -12,31 +12,8 @@ import News from './components/News';
 import Revolver from './components/Revolver';
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      const { deltaY } = e;
-      const { scrollTop, clientHeight } = container;
-      const nextScrollTop = scrollTop + Math.sign(deltaY) * clientHeight;
-
-      container.scrollTo({
-        top: nextScrollTop,
-        behavior: 'smooth',
-      });
-    };
-
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
-  }, []);
-
   return (
     <div
-      ref={containerRef}
       className='h-screen overflow-y-auto snap-y snap-mandatory'
       style={{ scrollSnapType: 'y mandatory' }}
     >
