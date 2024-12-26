@@ -1,18 +1,42 @@
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
 
 export default function Companion() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, {
+    once: false,
+    amount: 0.3,
+    margin: '0px 0px -200px 0px',
+  });
+
   return (
-    <section className='relative h-screen px-[120px] flex flex-col w-[1440px] m-auto scroll-smooth'>
+    <section
+      ref={sectionRef}
+      className='relative h-screen px-[120px] flex flex-col w-[1440px] m-auto scroll-smooth'
+    >
       <div className='flex justify-center items-center pt-[44px]'>
         <h2 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-white'>
           Create Your Personal
           <br />
-          <span className='text-[#6C3AF8]'>AI Companion</span>
+          <motion.span
+            initial={{ color: '#FFFFFF' }}
+            animate={isInView ? { color: '#6C3AF8' } : { color: '#FFFFFF' }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
+            className='text-[#6C3AF8]'
+          >
+            AI Companion
+          </motion.span>
         </h2>
       </div>
 
       <div className='flex flex-row gap-8 mt-[53px] h-full'>
-        <div className='w-1/2 flex justify-center items-center relative'>
+        <motion.div
+          className='w-1/2 flex justify-center items-center relative'
+          initial={{ opacity: 0, x: -100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+          transition={{ duration: 0.8 }}
+        >
           <Image
             src='/companion-phone.png'
             alt='Blob Hero'
@@ -38,28 +62,48 @@ export default function Companion() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className='w-1/2 gap-2 relative flex flex-col justify-center'>
-          <div className='flex items-center gap-2 w-[14px] h-[30px]'>
+        <motion.div
+          className='w-1/2 gap-2 relative flex flex-col justify-center'
+          initial={{ opacity: 0, x: 100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            className='flex items-center gap-2 w-[14px] h-[30px]'
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             <span className='font-roboto font-[400] text-white text-xs'>
               01
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full'>
+          <motion.h1
+            className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full'
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.6 }}
+          >
             Great Way to Little Fun to Your{' '}
             <span className='font-[800]'>
               Corporate <br /> World
             </span>
-          </h1>
+          </motion.h1>
 
-          <div className='flex justify-center items-center py-2 gap-2 '>
+          <motion.div
+            className='flex justify-center items-center py-2 gap-2'
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.8 }}
+          >
             <span className='font-roboto font-[400] text-xs text-white flex-1'>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit.
             </span>
-          </div>
+          </motion.div>
 
           {[
             {
@@ -71,9 +115,12 @@ export default function Companion() {
               description: 'Amet minim mollit non deserunt ullamco',
             },
           ].map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className='flex flex-row items-center gap-2 w-full h-[30px]'
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 1 + index * 0.2 }}
             >
               <Image src='/galka.svg' alt='Check' width={24} height={24} />
               <div className='flex justify-center items-center py-2 gap-2 '>
@@ -84,15 +131,22 @@ export default function Companion() {
                   {item.description}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
 
-          <button className='flex flex-row justify-center items-center px-6 py-2 gap-2 w-[126px] h-[44px] bg-[#6C3AF8] rounded-[20px] mt-[77px]'>
+          <motion.button
+            className='flex flex-row justify-center items-center px-6 py-2 gap-2 w-[126px] h-[44px] bg-[#6C3AF8] rounded-[20px] mt-[77px]'
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 1.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span className='font-roboto font-normal text-xs text-white'>
               Download App
             </span>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
