@@ -4,7 +4,7 @@ import SocialIcons from './components/SocialIcons';
 
 export default function Hero() {
   return (
-    <section className='relative min-h-screen overflow-hidden '>
+    <section className='relative min-h-screen w-[1440px] m-auto scroll-smooth'>
       <Header />
 
       {/* Background rings with centered blob */}

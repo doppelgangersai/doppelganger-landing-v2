@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function VideoSection() {
   return (
-    <div className='w-full h-screen overflow-hidden bg-[#2D2A3D]'>
+    <section className='w-full h-screen overflow-hidden bg-[#2D2A3D] w-[1440px] m-auto scroll-smooth'>
       <div className='w-full h-full px-[106px] py-[59px]'>
         <div className='relative w-full h-full rounded-[40px] overflow-hidden'>
           <div className='absolute top-[56px] left-1/2 -translate-x-1/2 z-[60] w-[1122px]'>
@@ -26,6 +26,6 @@ export default function VideoSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

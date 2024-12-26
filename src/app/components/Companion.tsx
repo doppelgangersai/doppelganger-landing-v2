@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Companion() {
   return (
-    <section className='relative w-full h-screen px-[120px] flex flex-col'>
+    <section className='relative h-screen px-[120px] flex flex-col w-[1440px] m-auto scroll-smooth'>
       <div className='flex justify-center items-center pt-[44px]'>
         <h2 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-white'>
           Create Your Personal

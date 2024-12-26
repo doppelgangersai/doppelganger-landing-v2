@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='relative h-screen w-full overflow-hidden bg-[#2B2D47]'>
+    <footer className='relative h-screen w-[1440px] m-auto scroll-smooth'>
       {/* Main Container */}
       <div className='container mx-auto h-full'>
         <div className='grid h-full grid-cols-12 gap-4 relative'>

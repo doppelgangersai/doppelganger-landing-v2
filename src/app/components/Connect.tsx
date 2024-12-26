@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Connect() {
   return (
-    <section className='relative w-full h-screen flex flex-col justify-center items-center overflow-hidden px-[120px]'>
+    <section className='relative h-screen flex flex-col justify-center items-center px-[120px] w-[1440px] m-auto scroll-smooth'>
       <div className='relative w-full h-full mx-auto grid grid-cols-12 grid-rows-1'>
         <div className='col-span-9 col-start-1 flex flex-col justify-center items-end'>
           <div className='py-[62px] self-center absolute top-0'>

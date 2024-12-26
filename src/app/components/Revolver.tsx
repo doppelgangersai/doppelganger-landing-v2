@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './Revolver.module.css';
 
 interface RevolverButton {
@@ -93,7 +93,7 @@ export default function Revolver() {
   };
 
   return (
-    <section className='relative w-full h-screen flex flex-col'>
+    <section className='relative h-screen flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'>
       <div className='flex flex-col items-center justify-center'>
         <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px]'>
           <span className='text-[#6C3AF8]'>Create</span> personalized{' '}
@@ -102,7 +102,7 @@ export default function Revolver() {
       </div>
 
       <div className='relative'>
-        <div className='absolute top-[120px] left-[45%] w-[550px] h-[550px] flex items-center'>
+        <div className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'>
           <div className='absolute w-full h-full'>
             {[...Array(10)].map((_, i) => (
               <div

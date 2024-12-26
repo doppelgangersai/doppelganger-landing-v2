@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Privacy = () => {
   return (
-    <section className='min-h-screen w-full px-6 py-[90px] md:p-[90px]'>
+    <section className='min-h-screen flex items-center px-6 py-[90px] md:p-[90px] w-[1440px] m-auto scroll-smooth'>
       <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-[118px]'>
         <div className='order-2 md:order-1'>
           <Image

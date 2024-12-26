@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
 
 export default function Team() {
   return (
-    <div className='w-full min-h-screen flex flex-col items-center py-16 px-4'>
+    <section className='min-h-screen flex flex-col items-center py-16 px-4 w-[1440px] m-auto scroll-smooth'>
       <div className='text-center mb-16'>
         <p className='text-white/60 mb-4'>Our Team</p>
         <h1 className='text-6xl font-bold'>
@@ -99,6 +99,6 @@ export default function Team() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
