@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Revolver.module.css';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import { useRef } from 'react';
 
 interface RevolverButton {
   name: string;
@@ -78,6 +80,18 @@ export default function Revolver() {
   );
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [isInView, controls]);
+
   const handleButtonClick = (button: RevolverButton) => {
     const currentIndex = buttons.findIndex((b) => b.name === button.name);
     const angle = (360 / buttons.length) * currentIndex - 270;
@@ -92,20 +106,113 @@ export default function Revolver() {
     setActiveButton(button);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const circleVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: {
+      color: '#FFFFFF',
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      color: '#6C3AF8',
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.8,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
-    <section className='relative h-screen flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'>
-      <div className='flex flex-col items-center justify-center'>
+    <motion.section
+      ref={sectionRef}
+      initial='hidden'
+      animate={controls}
+      variants={containerVariants}
+      className='relative h-screen flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'
+    >
+      <div className='flex flex-col items-center justify-center z-[200]'>
         <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px]'>
-          <span className='text-[#6C3AF8]'>Create</span> personalized{' '}
-          <span className='text-[#6C3AF8]'>AI Agents</span>
+          <motion.span
+            variants={{
+              ...textVariants,
+              visible: {
+                ...textVariants.visible,
+                transition: {
+                  ...textVariants.visible.transition,
+                  delay: 0.2,
+                },
+              },
+            }}
+          >
+            Create
+          </motion.span>{' '}
+          personalized{' '}
+          <motion.span
+            variants={{
+              ...textVariants,
+              visible: {
+                ...textVariants.visible,
+                transition: {
+                  ...textVariants.visible.transition,
+                  delay: 0.2,
+                },
+              },
+            }}
+          >
+            AI Agents
+          </motion.span>
         </h3>
       </div>
 
-      <div className='relative'>
-        <div className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'>
-          <div className='absolute w-full h-full'>
-            {[...Array(10)].map((_, i) => (
-              <div
+      <motion.div className='relative' variants={containerVariants}>
+        <motion.div
+          className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'
+          variants={circleVariants}
+        >
+          <motion.div
+            className='absolute w-full h-full'
+            variants={circleVariants}
+          >
+            {[...Array(12)].map((_, i) => (
+              <motion.div
                 key={i}
                 className='absolute rounded-full border border-[#8F6EFF]'
                 style={{
@@ -115,12 +222,12 @@ export default function Revolver() {
                   top: '50%',
                   left: 'calc(50% - 290px)',
                   transform: 'translate(-50%, -50%)',
-                  opacity: Math.max(0, (10 - i) / 10),
                   zIndex: 0,
+                  opacity: Math.max(0, (12 - i) / 12),
                 }}
               />
             ))}
-          </div>
+          </motion.div>
 
           <div
             className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
@@ -199,13 +306,9 @@ export default function Revolver() {
             </div>
           </div>
 
-          <div
-            className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4 transition-all duration-700 ease-in-out
-            ${
-              isTransitioning
-                ? 'opacity-0 translate-y-4'
-                : 'opacity-100 translate-y-0'
-            }`}
+          <motion.div
+            variants={buttonVariants}
+            className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4`}
           >
             <p className='font-[800] text-[40px] text-white leading-[49px]'>
               {displayedButton.name}
@@ -213,9 +316,9 @@ export default function Revolver() {
             <p className='font-[400] text-white text-[20px] leading-[25px]'>
               {displayedButton.description}
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }
