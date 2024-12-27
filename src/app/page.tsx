@@ -1,15 +1,14 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
 import Footer from './Footer';
 import Hero from './Hero';
 import VideoSection from './VideoSection';
 import Companion from './components/Companion';
 import Connect from './components/Connect';
-import Privacy from './components/Privacy';
-import Team from './components/Team';
 import News from './components/News';
+import Privacy from './components/Privacy';
 import Revolver from './components/Revolver';
+import Team from './components/Team';
 
 export default function Home() {
   return (
