@@ -111,7 +111,7 @@ export default function Team() {
         </h1>
       </motion.div>
 
-      <div className='relative w-full max-w-7xl overflow-visible py-8'>
+      <div className='relative w-full max-w-7xl py-8'>
         <div className='flex overflow-x-hidden snap-x snap-mandatory gap-[20px]'>
           {teamMembers.map((member, index) => (
             <motion.div

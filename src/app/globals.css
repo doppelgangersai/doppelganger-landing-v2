@@ -35,3 +35,16 @@ body {
 .ring-pulse {
   animation: pulse 2s infinite;
 }
+
+@keyframes ringAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: inherit;
+  }
+}
+
+.animate-ringAppear {
+  animation: ringAppear 1.2s ease-out forwards;
+}

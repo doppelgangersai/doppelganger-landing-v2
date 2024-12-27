@@ -9,15 +9,26 @@ export default function Hero() {
       <Header />
 
       {/* Background rings with centered blob */}
-      <div className='absolute right-[130px] top-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className='absolute right-[130px] top-1/2 -translate-y-1/2'>
         {/* Blob hero image */}
-        <Image src='/blob_hero.svg' alt='Blob Hero' width={270} height={270} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <Image
+            src='/blob_hero.svg'
+            alt='Blob Hero'
+            width={270}
+            height={270}
+          />
+        </motion.div>
 
         {/* Rings */}
         {[...Array(24)].map((_, i) => (
           <div
             key={i}
-            className={`absolute rounded-full border border-[#8F6EFF]`}
+            className={`absolute rounded-full border border-[#8F6EFF] animate-ringAppear`}
             style={{
               width: `${375 + i * 50}px`,
               height: `${375 + i * 50}px`,
@@ -25,8 +36,9 @@ export default function Hero() {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              opacity: Math.max(0, (24 - i) / 24),
               zIndex: -1,
+              opacity: Math.max(0, (24 - i) / 24),
+              animationDelay: `${0.8 + i * 0.1}s`,
             }}
           />
         ))}
