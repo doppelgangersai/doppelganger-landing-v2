@@ -41,10 +41,21 @@ body {
     opacity: 0;
   }
   to {
-    opacity: inherit;
   }
 }
 
 .animate-ringAppear {
   animation: ringAppear 1.2s ease-out forwards;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
