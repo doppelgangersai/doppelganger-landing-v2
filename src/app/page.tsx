@@ -7,7 +7,7 @@ import Hero from './Hero';
 
 import VideoSection from './VideoSection';
 import Companion from './components/Companion';
-import { HeroMobile, CompanionMobile } from './components/mobile';
+import { HeroMobile, CompanionMobile, VideoMobile } from './components/mobile';
 import Connect from './components/Connect';
 import News from './components/News';
 import Privacy from './components/Privacy';
@@ -28,6 +28,7 @@ export default function Home() {
         // Мобильная версия
         <>
           <HeroMobile />
+          <VideoMobile />
           <CompanionMobile />
         </>
       ) : (
