@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
 
 export default function Team() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   const containerVariants = {
     hidden: { opacity: 0 },

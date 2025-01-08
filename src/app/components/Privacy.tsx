@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 const Privacy = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.8, y: 100 },

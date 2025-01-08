@@ -25,42 +25,22 @@ export default function Home() {
       style={!isMobile ? { scrollSnapType: 'y mandatory' } : {}}
     >
       {isMobile ? (
-        // Мобильная версия
         <>
           <HeroMobile />
           <VideoMobile />
           <CompanionMobile />
         </>
       ) : (
-        // Десктопная версия
         <>
-          <div className='h-screen w-full snap-start overflow-hidden'>
-            <Hero />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <VideoSection />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Companion />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Connect />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Revolver />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Privacy />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Team />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <News />
-          </div>
-          <div className='h-screen w-full snap-start'>
-            <Footer />
-          </div>
+          <Hero />
+          <VideoSection />
+          <Companion />
+          <Connect />
+          <Revolver />
+          <Privacy />
+          <Team />
+          <News />
+          <Footer />
         </>
       )}
     </div>

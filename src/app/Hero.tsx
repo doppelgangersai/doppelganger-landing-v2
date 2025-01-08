@@ -15,6 +15,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
         >
           <Image
             src='/blob_hero.svg'
@@ -52,7 +53,7 @@ export default function Hero() {
           <motion.h1
             whileInView={{ x: 0, opacity: 1 }}
             initial={{ x: 100, opacity: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className='font-montserrat text-[72px] leading-[80px] font-extrabold text-white max-w-3xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] mix-blend-normal'
           >
@@ -60,7 +61,7 @@ export default function Hero() {
             <motion.span
               whileInView={{ color: '#6C3AF8' }}
               initial={{ color: '#FFFFFF' }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
               className='text-[#6C3AF8]'
             >

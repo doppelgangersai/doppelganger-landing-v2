@@ -5,7 +5,7 @@ import { useRef } from 'react';
 export default function Connect() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
-    once: false,
+    once: true,
     amount: 0.3,
     margin: '0px 0px -200px 0px',
   });

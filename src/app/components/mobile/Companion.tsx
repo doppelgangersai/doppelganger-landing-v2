@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function CompanionMobile() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
-    once: false,
+    once: true,
     amount: 0.3,
   });
 

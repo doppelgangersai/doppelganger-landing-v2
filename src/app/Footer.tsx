@@ -8,7 +8,7 @@ import { useRef } from 'react';
 
 export default function Footer() {
   const footerRef = useRef(null);
-  const isInView = useInView(footerRef, { once: false, amount: 0.3 });
+  const isInView = useInView(footerRef, { once: true, amount: 0.3 });
 
   return (
     <footer

@@ -13,7 +13,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ date }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     transition={{
       duration: 0.8,
       type: 'spring',
@@ -48,7 +48,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ date }) => (
 
 export default function News() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },

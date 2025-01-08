@@ -3,7 +3,7 @@ import { motion, useInView, useScroll } from 'framer-motion';
 
 export default function VideoSection() {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const { scrollY } = useScroll();
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [lastScroll, setLastScroll] = useState(0);

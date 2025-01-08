@@ -81,7 +81,7 @@ export default function Revolver() {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   const controls = useAnimation();
 
   useEffect(() => {
