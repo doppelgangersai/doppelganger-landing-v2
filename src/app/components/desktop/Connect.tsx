@@ -24,11 +24,11 @@ export default function Connect() {
   return (
     <section
       ref={sectionRef}
-      className='relative h-screen flex flex-col justify-center items-center px-[120px] w-[1440px] m-auto scroll-smooth'
+      className='relative flex flex-col justify-center items-center px-[120px] w-[1440px] m-auto scroll-smooth'
     >
       <div className='relative w-full h-full mx-auto grid grid-cols-12 grid-rows-1'>
         <div className='col-span-9 col-start-1 flex flex-col justify-center items-end'>
-          <div className='py-[62px] self-center absolute top-0'>
+          <div className='py-[62px] self-center absolute top-[-160px]'>
             <h2 className='font-montserrat font-[800] text-[45px] leading-[45px] text-center text-white'>
               <motion.span
                 initial='hidden'
@@ -47,24 +47,49 @@ export default function Connect() {
               >
                 power
               </motion.span>{' '}
-              <br /> of{' '}
+              of{' '}
               <motion.span
                 initial='hidden'
                 animate={isInView ? 'visible' : 'hidden'}
                 variants={textVariants}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-                your data!
+                your data
+              </motion.span>
+              <br />
+              with{' '}
+              <motion.span
+                initial='hidden'
+                animate={isInView ? 'visible' : 'hidden'}
+                variants={textVariants}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                Privacy{' '}
+              </motion.span>
+              Preserving{' '}
+              <motion.span
+                initial='hidden'
+                animate={isInView ? 'visible' : 'hidden'}
+                variants={textVariants}
+                transition={{ duration: 0.5, delay: 1 }}
+              >
+                RAG!
               </motion.span>
             </h2>
           </div>
-          <Image
-            src='/soc_icons.png'
-            alt='Connect'
-            width={867}
-            height={365}
-            className='h-[365px]'
-          />
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Image
+              src='/soc_icons.png'
+              alt='Connect'
+              width={867}
+              height={365}
+              className='h-[365px]'
+            />
+          </motion.div>
         </div>
 
         <motion.div
@@ -87,7 +112,7 @@ export default function Connect() {
               }}
             >
               <Image
-                src='/phone_vault.png'
+                src='/phone_privacy.svg'
                 alt='Connect'
                 width={233}
                 height={470}
@@ -107,12 +132,17 @@ export default function Connect() {
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     zIndex: -1,
+                    opacity: Math.max(0, (10 - i) / 10),
                   }}
                 />
               ))}
             </div>
           </div>
         </motion.div>
+      </div>
+
+      <div className='flex justify-center items-center my-[21px]'>
+        <Image src='/arrow_2.svg' alt='Blob Hero' width={803} height={484} />
       </div>
     </section>
   );

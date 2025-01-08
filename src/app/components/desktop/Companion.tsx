@@ -95,7 +95,7 @@ export default function Companion() {
         </motion.div>
       </div>
 
-      <div className='flex justify-center items-center mt-[21px]'>
+      <div className='flex justify-center items-center my-[21px]'>
         <Image src='/arrow_1.svg' alt='Blob Hero' width={803} height={398} />
       </div>
     </section>
