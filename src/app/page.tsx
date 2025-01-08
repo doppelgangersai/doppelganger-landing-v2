@@ -1,21 +1,44 @@
 'use client';
 
 import { useDeviceType } from '@/hooks/useDeviceType';
-import Footer from './Footer';
 
-import Hero from './Hero';
-
-import VideoSection from './VideoSection';
-import Companion from './components/Companion';
-import { HeroMobile, CompanionMobile, VideoMobile } from './components/mobile';
-import Connect from './components/Connect';
-import News from './components/News';
-import Privacy from './components/Privacy';
-import Revolver from './components/Revolver';
-import Team from './components/Team';
+import {
+  CompanionDesktop,
+  ConnectDesktop,
+  FooterDesktop,
+  HeroDesktop,
+  NewsDesktop,
+  PrivacyDesktop,
+  RevolverDesktop,
+  TeamDesktop,
+  VideoDesktop,
+} from './components/desktop';
+import {
+  CompanionMobile,
+  HeroMobile,
+  VideoMobile,
+} from './components/mobile';
 
 export default function Home() {
   const isMobile = useDeviceType();
+
+  const mobileGroup = <>
+    <HeroMobile />
+    <VideoMobile />
+    <CompanionMobile />
+  </>
+
+  const desktopGroup = <>
+      <HeroDesktop />
+      <VideoDesktop />
+      <CompanionDesktop />
+      <ConnectDesktop />
+      <RevolverDesktop />
+      <PrivacyDesktop />
+      <TeamDesktop />
+      <NewsDesktop />
+      <FooterDesktop />
+    </>
 
   return (
     <div
@@ -24,25 +47,7 @@ export default function Home() {
       }`}
       style={!isMobile ? { scrollSnapType: 'y mandatory' } : {}}
     >
-      {isMobile ? (
-        <>
-          <HeroMobile />
-          <VideoMobile />
-          <CompanionMobile />
-        </>
-      ) : (
-        <>
-          <Hero />
-          <VideoSection />
-          <Companion />
-          <Connect />
-          <Revolver />
-          <Privacy />
-          <Team />
-          <News />
-          <Footer />
-        </>
-      )}
+      {isMobile ? mobileGroup : desktopGroup}
     </div>
   );
 }

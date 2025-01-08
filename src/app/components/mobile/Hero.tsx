@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Header from '../Header';
+import Header from '../desktop/Header';
 import Image from 'next/image';
 export default function HeroMobile() {
   return (

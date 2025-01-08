@@ -1,6 +1,6 @@
-import Header from './components/Header';
+import Header from './Header';
 import Image from 'next/image';
-import SocialIcons from './components/SocialIcons';
+import SocialIcons from './SocialIcons';
 import { motion } from 'framer-motion';
 
 export default function Hero() {

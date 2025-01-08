@@ -1,0 +1,9 @@
+export { default as HeroDesktop } from './Hero';
+export { default as CompanionDesktop } from './Companion';
+export { default as VideoDesktop } from './VideoSection';
+export { default as ConnectDesktop } from './Connect';
+export { default as RevolverDesktop } from './Revolver';
+export { default as PrivacyDesktop } from './Privacy';
+export { default as TeamDesktop } from './Team';
+export { default as NewsDesktop } from './News';
+export { default as FooterDesktop } from './Footer';
