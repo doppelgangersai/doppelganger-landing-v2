@@ -2,10 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 
-// ... импортируем интерфейс и данные из desktop версии ...
 interface TeamMember {
   name: string;
   role: string;

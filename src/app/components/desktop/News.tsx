@@ -13,7 +13,7 @@ interface NewsCardProps {
   };
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ date }) => (
+export const NewsCard: React.FC<NewsCardProps> = ({ date }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}

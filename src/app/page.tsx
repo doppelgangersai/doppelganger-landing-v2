@@ -22,6 +22,7 @@ import {
   VideoMobile,
   PrivacyMobile,
   TeamMobile,
+  NewsMobile,
 } from './components/mobile';
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
       <RevolverMobile />
       <PrivacyMobile />
       <TeamMobile />
+      <NewsMobile />
     </>
   );
 
