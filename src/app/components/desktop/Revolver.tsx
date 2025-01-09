@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Revolver.module.css';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion, useInView, useAnimation, px } from 'framer-motion';
 import { useRef } from 'react';
 
 interface RevolverButton {
@@ -15,59 +15,45 @@ interface RevolverButton {
 
 const buttons: RevolverButton[] = [
   {
-    name: 'Personal Coach',
+    name: 'Personal Assistant',
     description:
-      "Share your twin with your friends, family, girlfriend or boyfriend, but remember doppelgangers can't lie. Do you have anything to hide?",
-    icon: '/robots/coach 2.png',
+      'Personalized AI agent that understands your habits, preferences, and goals, turning your daily routine into a seamless, personalized experience.',
+    icon: '/assistant.png',
     color: '#E27919',
   },
   {
-    name: 'Therapist',
+    name: 'Financial Advisor',
     description:
-      "Chat with your or other user's twins or even allow your twin to connect with other twins, who knows maybe they'll find you a new friend or conspire to take over the world",
-    icon: '/robots/therapist 2.png',
+      'Your personalized mental wellness advisor that uses your personal data live streams to understand your mood, stress levels, and behavior patterns, offering real-time guidance.',
+    icon: '/finance.png',
     color: '#4CAF50',
   },
   {
-    name: 'Personal Assistant',
+    name: 'Dating Agent',
     description:
-      'Connect your Doppelganger to your group chats on social media, messengers or your email accounts via our API to outsource your daily repetitive tasks',
-    icon: '/robots/assistant 2.png',
+      'Transform your swiping experience with your personal dating concierge that matches you with the most compatible partners and even organizing dates on your behalf',
+    icon: '/dating.png',
     color: '#2196F3',
   },
   {
-    name: 'Sport',
+    name: 'Social Media Manager',
     description:
-      'Monetize your doppelganger via paid chat or share your expertise, knowledge and experiences by offering your dataset to other users for training of their twins',
-    icon: '/robots/sport 2.png',
+      'Elevate your social media game with an SMM manager that not only proactively creates posts on the latest news in your style but engages the audience replying to them 24/7 building stronger community',
+    icon: '/smm.png',
     color: '#9C27B0',
   },
   {
     name: 'Fitness Coach',
     description:
-      'Create application specific chatbots by further training your twin for a specific role like personal assistant, sales bot, support bot, digital girlfriend/boyfriend ect.',
-    icon: '/robots/sunglasses 1.png',
+      'AI coach that analyzes your movement, sleep, and nutrition patterns to craft a fitness regime that evolves with you, pushing you towards the best version of yourself',
+    icon: '/fitness.png',
     color: '#FF5722',
-  },
-  {
-    name: 'Social Media Manager',
-    description:
-      'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/robots/news 2.png',
-    color: '#E27919',
-  },
-  {
-    name: 'Dating Agent',
-    description:
-      'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/robots/tt 2.png',
-    color: '#E27919',
   },
   {
     name: 'Recruiter Agent',
     description:
-      'Merge your twin with any other user\'s twin to create new entity that share the characteristics of both "parents"',
-    icon: '/robots/tree 2.png',
+      "Your personal job hunter agent who understands your career goals, applies for positions that fit your profile, and navigates interview processes, allowing you to land the job you're meant for ",
+    icon: '/recruiter.png',
     color: '#E27919',
   },
 ];
@@ -225,7 +211,7 @@ export default function Revolver() {
               />
             ))}
 
-            <div className='absolute -translate-y-1/2 -translate-x-1/2 w-[334px] h-[457px] z-[200] mt-[31px]'>
+            <div className='absolute -translate-y-1/2 -translate-x-1/2 w-[334px] h-[457px] z-[400] mt-[31px]'>
               <Image
                 src='/robot_wrapper.svg'
                 alt={displayedButton.name.toLowerCase()}
@@ -253,7 +239,7 @@ export default function Revolver() {
               variants={circleVariants}
             >
               <div
-                className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
+                className='w-full h-full absolute rounded-full border-2 transition-all duration-700 z-[300]'
                 style={{
                   borderColor: activeButton.color,
                   transform: `rotate(${rotation}deg)`,
@@ -266,15 +252,6 @@ export default function Revolver() {
                   const x = radius * Math.cos((angle * Math.PI) / 180);
                   const y = radius * Math.sin((angle * Math.PI) / 180);
 
-                  const activeIndex = buttons.findIndex(
-                    (b) => b.name === activeButton.name
-                  );
-
-                  const isNeighbor =
-                    index === (activeIndex + 1) % buttons.length ||
-                    index ===
-                      (activeIndex - 1 + buttons.length) % buttons.length;
-
                   return (
                     <div
                       key={button.name}
@@ -285,7 +262,7 @@ export default function Revolver() {
                         ? 'scale-110'
                         : 'scale-100'
                     }
-                    ${isNeighbor ? 'opacity-0' : 'opacity-100'}`}
+                    opacity-100`}
                       style={{
                         transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%)) rotate(${-rotation}deg)`,
                         left: '50%',
@@ -309,12 +286,12 @@ export default function Revolver() {
 
               <motion.div
                 variants={buttonVariants}
-                className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4`}
+                className={`flex flex-col pl-[150px] pr-[50px] font-montserrat gap-4`}
               >
-                <p className='font-[800] text-[40px] text-white leading-[49px]'>
+                <p className='font-[800] text-[40px] text-white leading-[49px] pr-[15px]'>
                   {displayedButton.name}
                 </p>
-                <p className='font-[400] text-white text-[20px] leading-[25px]'>
+                <p className='font-[400] text-white text-[20px] leading-[25px] pr-[15px]'>
                   {displayedButton.description}
                 </p>
               </motion.div>
@@ -322,79 +299,6 @@ export default function Revolver() {
           </motion.div>
         </div>
       </div>
-
-      {/* <motion.div className='relative' variants={containerVariants}>
-        <motion.div
-          className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'
-          variants={circleVariants}
-        >
-          <div
-            className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
-            style={{
-              borderColor: activeButton.color,
-              transform: `rotate(${rotation}deg)`,
-            }}
-          >
-            {buttons.map((button, index) => {
-              const angle = (360 / buttons.length) * index - 90;
-              const radius = 275;
-
-              const x = radius * Math.cos((angle * Math.PI) / 180);
-              const y = radius * Math.sin((angle * Math.PI) / 180);
-
-              const activeIndex = buttons.findIndex(
-                (b) => b.name === activeButton.name
-              );
-
-              const isNeighbor =
-                index === (activeIndex + 1) % buttons.length ||
-                index === (activeIndex - 1 + buttons.length) % buttons.length;
-
-              return (
-                <div
-                  key={button.name}
-                  onClick={() => handleButtonClick(button)}
-                  className={`absolute cursor-pointer bg-[#181624] text-[#fff] font-inter rounded-[12px] flex items-center justify-center transition-all duration-700 
-                    ${
-                      activeButton.name === button.name
-                        ? 'scale-110'
-                        : 'scale-100'
-                    }
-                    ${isNeighbor ? 'opacity-0' : 'opacity-100'}`}
-                  style={{
-                    transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%)) rotate(${-rotation}deg)`,
-                    left: '50%',
-                    top: '50%',
-                  }}
-                >
-                  <div
-                    className={styles.buttonText}
-                    style={
-                      {
-                        '--button-color': button.color,
-                      } as React.CSSProperties
-                    }
-                  >
-                    {button.name}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <motion.div
-            variants={buttonVariants}
-            className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4`}
-          >
-            <p className='font-[800] text-[40px] text-white leading-[49px]'>
-              {displayedButton.name}
-            </p>
-            <p className='font-[400] text-white text-[20px] leading-[25px]'>
-              {displayedButton.description}
-            </p>
-          </motion.div>
-        </motion.div>
-      </motion.div> */}
     </motion.section>
   );
 }
