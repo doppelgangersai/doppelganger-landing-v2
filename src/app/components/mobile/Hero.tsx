@@ -3,7 +3,7 @@ import Header from '../desktop/Header';
 import Image from 'next/image';
 export default function HeroMobile() {
   return (
-    <section className='h-screen w-full snap-start overflow-hidden  relative'>
+    <section className='h-screen w-full relative'>
       <Header />
 
       <div className='mb-[125px]'>
@@ -11,7 +11,7 @@ export default function HeroMobile() {
           <motion.h1
             whileInView={{ x: 0, opacity: 1 }}
             initial={{ x: 100, opacity: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className='font-montserrat text-[38px] leading-[45px] font-extrabold text-white max-w-3xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] mix-blend-normal text-center'
           >
@@ -20,7 +20,7 @@ export default function HeroMobile() {
             <motion.span
               whileInView={{ color: '#6C3AF8' }}
               initial={{ color: '#FFFFFF' }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
               className='text-[#6C3AF8]'
             >

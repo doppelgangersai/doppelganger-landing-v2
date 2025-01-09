@@ -6,10 +6,7 @@ export default function VideoMobile() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section
-      ref={ref}
-      className='w-full h-screen bg-[#2D2A3D] relative grid content-center'
-    >
+    <section ref={ref} className='w-full h-screen relative grid content-center'>
       <motion.div
         className=''
         initial={{ scale: 0.95, opacity: 0 }}

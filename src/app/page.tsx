@@ -13,7 +13,12 @@ import {
   TeamDesktop,
   VideoDesktop,
 } from './components/desktop';
-import { CompanionMobile, HeroMobile, VideoMobile } from './components/mobile';
+import {
+  CompanionMobile,
+  ConnectMobile,
+  HeroMobile,
+  VideoMobile,
+} from './components/mobile';
 
 export default function Home() {
   const isMobile = useDeviceType();
@@ -23,6 +28,7 @@ export default function Home() {
       <HeroMobile />
       <VideoMobile />
       <CompanionMobile />
+      <ConnectMobile />
     </>
   );
 

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Revolver.module.css';
-import { motion, useInView, useAnimation, px } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
 
 interface RevolverButton {
