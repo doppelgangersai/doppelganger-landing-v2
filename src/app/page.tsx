@@ -13,10 +13,12 @@ import {
   TeamDesktop,
   VideoDesktop,
 } from './components/desktop';
+
 import {
   CompanionMobile,
   ConnectMobile,
   HeroMobile,
+  RevolverMobile,
   VideoMobile,
 } from './components/mobile';
 
@@ -29,6 +31,7 @@ export default function Home() {
       <VideoMobile />
       <CompanionMobile />
       <ConnectMobile />
+      <RevolverMobile />
     </>
   );
 

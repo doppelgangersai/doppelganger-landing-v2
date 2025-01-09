@@ -6,14 +6,14 @@ import styles from './Revolver.module.css';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
 
-interface RevolverButton {
+export interface RevolverButton {
   name: string;
   description: string;
   icon: string;
   color: string;
 }
 
-const buttons: RevolverButton[] = [
+export const buttons: RevolverButton[] = [
   {
     name: 'Personal Assistant',
     description:
