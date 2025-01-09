@@ -210,6 +210,21 @@ export default function Revolver() {
             className='w-full h-full col-start-4 mt-[300px] relative -ml-[20px]'
             variants={circleVariants}
           >
+            {[...Array(12)].map((_, i) => (
+              <motion.div
+                key={i}
+                className='absolute rounded-full border border-[#8F6EFF] z-[0]'
+                style={{
+                  width: `${412 + i * 50}px`,
+                  height: `${412 + i * 50}px`,
+                  filter: 'blur(0.625px)',
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 0,
+                  opacity: Math.max(0, (12 - i) / 12),
+                }}
+              />
+            ))}
+
             <div className='absolute -translate-y-1/2 -translate-x-1/2 w-[334px] h-[457px] z-[200] mt-[31px]'>
               <Image
                 src='/robot_wrapper.svg'
@@ -232,21 +247,6 @@ export default function Revolver() {
                 />
               </div>
             </div>
-
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={i}
-                className='absolute rounded-full border border-[#8F6EFF] z-[0]'
-                style={{
-                  width: `${412 + i * 50}px`,
-                  height: `${412 + i * 50}px`,
-                  filter: 'blur(0.625px)',
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 0,
-                  opacity: Math.max(0, (12 - i) / 12),
-                }}
-              />
-            ))}
           </motion.div>
         </div>
       </div>
