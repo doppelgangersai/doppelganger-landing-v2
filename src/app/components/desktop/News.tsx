@@ -202,7 +202,6 @@ export default function News() {
             <NewsCard date={{ day: '00', month: 'Aug' }} />
             <NewsCard date={{ day: '00', month: 'Jan' }} />
             <NewsCard date={{ day: '00', month: 'Dec' }} />
-            {/* Можете добавить больше карточек */}
           </Slider>
         </motion.div>
       </div>

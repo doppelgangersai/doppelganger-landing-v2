@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+
 export default function Connect() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {

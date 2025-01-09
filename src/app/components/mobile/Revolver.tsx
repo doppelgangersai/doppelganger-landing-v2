@@ -3,6 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { buttons, RevolverButton } from '../desktop/Revolver';
 import styles from '../desktop/Revolver.module.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import sliderStyles from './Revolver.module.css';
 
 export default function Revolver() {
   const sectionRef = useRef(null);
@@ -81,6 +85,19 @@ export default function Revolver() {
     },
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    beforeChange: (oldIndex: number, newIndex: number) => {
+      const newButton = buttons[newIndex];
+      handleButtonClick(newButton);
+    },
+    dotsClass: `${sliderStyles.dots}`,
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -125,36 +142,48 @@ export default function Revolver() {
       </h3>
 
       <div className='w-full relative mb-[86px]'>
-        <div className='inset-0 flex justify-center items-center'>
-          <div className='z-[400]'>
-            <Image
-              src='/robot_wrapper.svg'
-              alt={displayedButton.name.toLowerCase()}
-              width={226}
-              height={456}
-              className='w-[226px] h-[456px]'
-            />
-            <div
-              className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
-              ${
-                isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-              }`}
-            >
-              <Image
-                src={displayedButton.icon}
-                alt={displayedButton.name.toLowerCase()}
-                width={173}
-                height={259}
-              />
-            </div>
-          </div>
+        <div className='inset-0 flex justify-center items-center z-[400]'>
+          <Slider
+            {...settings}
+            className={`w-full ${sliderStyles.sliderContainer}`}
+          >
+            {buttons.map((button) => (
+              <div key={button.name} className='z-[400] flex justify-center'>
+                <div className='relative flex justify-center items-center'>
+                  <Image
+                    src='/robot_wrapper.svg'
+                    alt={displayedButton.name.toLowerCase()}
+                    width={226}
+                    height={456}
+                    className='w-[226px] h-[456px]'
+                  />
+
+                  <div
+                    className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
+                    ${
+                      isTransitioning
+                        ? 'opacity-0 scale-95'
+                        : 'opacity-100 scale-100'
+                    }`}
+                  >
+                    <Image
+                      src={button.icon}
+                      alt={button.name.toLowerCase()}
+                      width={173}
+                      height={259}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
 
           <motion.div
             className='absolute left-1/2 w-[650px] h-[650px] flex items-center'
             variants={circleVariants}
           >
             <div
-              className='w-full h-full absolute rounded-full border-2 transition-all duration-700 z-[300]'
+              className='w-full h-full absolute rounded-full border-2 transition-all duration-700 z-[-10]'
               style={{
                 borderColor: activeButton.color,
                 transform: `rotate(${rotation}deg)`,
