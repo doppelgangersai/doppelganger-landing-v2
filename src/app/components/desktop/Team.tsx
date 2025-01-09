@@ -39,21 +39,21 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Sandro Lovnički',
-    role: 'CTO',
+    role: '',
     image: '/sandro.png',
     description: `Computer Scientist & software Engineer, community Leader of Google Developers Zagreb and Flutter Croatia`,
     companies: ['/flatter.png'],
   },
   {
     name: 'Felix Meng',
-    role: 'CTO',
+    role: '',
     image: '/felix.png',
     description: `Stanford Accelerator batch 2024. Created a RAG with fully homomorphic encryption, and private information retrieval.`,
     companies: ['/stanford.png'],
   },
   {
     name: 'Liwen Ouyang',
-    role: 'CTO',
+    role: '',
     image: '/liwen.png',
     description: `Google 2022 Intern Stanford MS 2024. Created framework that allows agents to query datasets without exposing the prompt.`,
     companies: ['/stanford.png', '/google.png'],
@@ -144,14 +144,16 @@ export default function Team() {
                     width={292}
                     height={301}
                   />
-                  <motion.div
-                    className='absolute top-0 right-0 bg-[#6C54C3] text-white px-2 py-1 rounded-lg z-20 w-14 h-[42px] flex items-center justify-center'
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <span className='font-bold text-[22px] leading-[26px]'>
-                      {member.role}
-                    </span>
-                  </motion.div>
+                  {member.role && (
+                    <motion.div
+                      className='absolute top-0 right-0 bg-[#6C54C3] text-white px-2 py-1 rounded-lg z-20 w-14 h-[42px] flex items-center justify-center'
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <span className='font-bold text-[22px] leading-[26px]'>
+                        {member.role}
+                      </span>
+                    </motion.div>
+                  )}
                 </motion.div>
                 <div className='flex flex-col items-center gap-4'>
                   <h3 className='text-[22px] font-bold text-white leading-[27px] w-full text-center'>
@@ -169,7 +171,7 @@ export default function Team() {
                       alt='Company logo'
                       width={33.11}
                       height={33.59}
-                      className='opacity-70 w-full h-full'
+                      className='opacity-70 w-full h-full scale-[1.5]'
                     />
                   ))}
                 </div>
