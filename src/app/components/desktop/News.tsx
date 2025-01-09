@@ -80,7 +80,7 @@ export default function News() {
       initial='hidden'
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='relative h-screen bg-white m-auto scroll-smooth z-10'
+      className='relative h-screen m-auto scroll-smooth z-10'
     >
       <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start gap-[38px] w-[1050px]'>
         <motion.div
@@ -89,17 +89,17 @@ export default function News() {
         >
           <motion.div
             whileHover={{ scale: 1.1 }}
-            className='flex justify-center items-center px-6 py-2 rounded-[14px] bg-white'
+            className='flex justify-center items-center px-6 py-2 rounded-[14px]'
           >
-            <span className='font-roboto text-xs leading-[14px] text-[#272147]'>
+            <span className='font-roboto text-xs leading-[14px] text-[#fff]'>
               Our Blog
             </span>
           </motion.div>
-          <h2 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-[#272147] w-full'>
+          <h2 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-[#fff] w-full'>
             Latest{' '}
             <motion.span
               initial={{ color: '#000' }}
-              animate={{ color: '#6C3AF8' }}
+              animate={{ color: '#fff' }}
               transition={{ duration: 3.5, delay: 0.1, ease: 'easeInOut' }}
             >
               New&apos;s & Posts

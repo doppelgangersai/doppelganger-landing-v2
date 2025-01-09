@@ -18,33 +18,45 @@ const teamMembers: TeamMember[] = [
     name: 'Andrew Krynin',
     role: 'CEO',
     image: '/Andrew.png',
-    description:
-      'is a serial entrepreneur who won a USF national grant (link) in 2020 with a social media boosting app, has been running a marketing agency for over 5 years ex marketing manager at Aurora (Near Protocol)',
-    companies: ['/near.png', '/near.png'],
+    description: `Andrew Krynin (CEO) is a serial entrepreneur
+      who won a Ukraine national state grant (link) in 2020 with a social media boosting app.
+      ex Near Protocol Ecosystem lead & Head of Marketing at Aurora`,
+    companies: ['/near.png', '/triangle.png'],
   },
   {
     name: 'Freddy Snijder',
     role: 'CTO',
-    image: '/team_placeholder.png',
-    description:
-      'is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML who (co-) invented multiple inventions. Currently there are 16 patent applications left, and I have 3 granted patents.',
-    companies: ['/near.png', '/near.png'],
+    image: '/freddy.png',
+    description: `is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML`,
+    companies: ['/shell.png', '/ing.png'],
   },
   {
     name: 'Pavlo Shepetukha',
     role: 'CPO',
-    image: '/team_placeholder.png',
-    description:
-      'is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML who (co-) invented multiple inventions. Currently there are 16 patent applications left, and I have 3 granted patents.',
-    companies: ['/near.png', '/near.png'],
+    image: '/pavlo.png',
+    description: `Lead product designer with over 10 Years of experience who led the redesign of Vodafone Ukraine App. `,
+    companies: ['/vodafon.png', '/epam.png'],
   },
   {
-    name: 'Freddy S',
+    name: 'Sandro Lovnički',
     role: 'CTO',
-    image: '/team_placeholder.png',
-    description:
-      'is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML who (co-) invented multiple inventions. Currently there are 16 patent applications left, and I have 3 granted patents.',
-    companies: ['/near.png', '/near.png'],
+    image: '/sandro.png',
+    description: `Computer Scientist & software Engineer, community Leader of Google Developers Zagreb and Flutter Croatia`,
+    companies: ['/flatter.png'],
+  },
+  {
+    name: 'Felix Meng',
+    role: 'CTO',
+    image: '/felix.png',
+    description: `Stanford Accelerator batch 2024. Created a RAG with fully homomorphic encryption, and private information retrieval.`,
+    companies: ['/stanford.png'],
+  },
+  {
+    name: 'Liwen Ouyang',
+    role: 'CTO',
+    image: '/liwen.png',
+    description: `Google 2022 Intern Stanford MS 2024. Created framework that allows agents to query datasets without exposing the prompt.`,
+    companies: ['/stanford.png', '/google.png'],
   },
 ];
 
@@ -112,7 +124,7 @@ export default function Team() {
       </motion.div>
 
       <div className='relative w-full max-w-7xl py-8'>
-        <div className='flex overflow-x-hidden snap-x snap-mandatory gap-[20px]'>
+        <div className='flex overflow-x-auto snap-x snap-mandatory gap-[20px] pb-4 scrollbar-hide overflow-y-hidden'>
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -122,14 +134,10 @@ export default function Team() {
                 scale: 1.05,
                 transition: { type: 'spring', stiffness: 400, damping: 10 },
               }}
-              className='p-4'
+              className='p-4 flex-shrink-0 w-[320px]'
             >
-              <div className='flex flex-col justify-center items-center gap-[38px]'>
-                <motion.div
-                  className='relative'
-                  whileHover={{ rotate: [0, -5, 5, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
+              <div className='flex flex-col justify-center items-center gap-[38px] h-full'>
+                <motion.div className='relative'>
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -159,9 +167,9 @@ export default function Team() {
                       key={i}
                       src={company}
                       alt='Company logo'
-                      width={23.11}
-                      height={23.59}
-                      className='opacity-70'
+                      width={33.11}
+                      height={33.59}
+                      className='opacity-70 w-full h-full'
                     />
                   ))}
                 </div>
