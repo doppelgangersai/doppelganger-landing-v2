@@ -31,7 +31,7 @@ export default function Footer() {
             }}
             className='absolute left-[15%] top-1/2 -translate-y-1/2'
           >
-            {[...Array(12)].map((_, i) => (
+            {[...Array(24)].map((_, i) => (
               <div
                 key={i}
                 className='absolute rounded-full border border-[#8F6EFF]'
@@ -42,7 +42,7 @@ export default function Footer() {
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  opacity: Math.max(0, (12 - i) / 12),
+                  opacity: Math.max(0, (24 - i) / 24),
                   zIndex: 0,
                 }}
               />

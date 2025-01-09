@@ -40,5 +40,9 @@ export default function Home() {
     </>
   );
 
-  return <div>{isMobile ? mobileGroup : desktopGroup}</div>;
+  return (
+    <div className='overflow-hidden'>
+      {isMobile ? mobileGroup : desktopGroup}
+    </div>
+  );
 }
