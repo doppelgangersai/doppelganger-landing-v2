@@ -6,3 +6,4 @@ export { default as RevolverMobile } from './Revolver';
 export { default as PrivacyMobile } from './Privacy';
 export { default as TeamMobile } from './Team';
 export { default as NewsMobile } from './News';
+export { default as FooterMobile } from './Footer';

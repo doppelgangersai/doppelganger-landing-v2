@@ -23,6 +23,7 @@ import {
   PrivacyMobile,
   TeamMobile,
   NewsMobile,
+  FooterMobile,
 } from './components/mobile';
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
       <PrivacyMobile />
       <TeamMobile />
       <NewsMobile />
+      <FooterMobile />
     </>
   );
 
