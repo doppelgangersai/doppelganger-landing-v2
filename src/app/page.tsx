@@ -13,22 +13,21 @@ import {
   TeamDesktop,
   VideoDesktop,
 } from './components/desktop';
-import {
-  CompanionMobile,
-  HeroMobile,
-  VideoMobile,
-} from './components/mobile';
+import { CompanionMobile, HeroMobile, VideoMobile } from './components/mobile';
 
 export default function Home() {
   const isMobile = useDeviceType();
 
-  const mobileGroup = <>
-    <HeroMobile />
-    <VideoMobile />
-    <CompanionMobile />
-  </>
+  const mobileGroup = (
+    <>
+      <HeroMobile />
+      <VideoMobile />
+      <CompanionMobile />
+    </>
+  );
 
-  const desktopGroup = <>
+  const desktopGroup = (
+    <>
       <HeroDesktop />
       <VideoDesktop />
       <CompanionDesktop />
@@ -39,15 +38,7 @@ export default function Home() {
       <NewsDesktop />
       <FooterDesktop />
     </>
-
-  return (
-    <div
-      className={`h-screen overflow-y-auto ${
-        !isMobile ? 'snap-y snap-mandatory' : ''
-      }`}
-      style={!isMobile ? { scrollSnapType: 'y mandatory' } : {}}
-    >
-      {isMobile ? mobileGroup : desktopGroup}
-    </div>
   );
+
+  return <div>{isMobile ? mobileGroup : desktopGroup}</div>;
 }

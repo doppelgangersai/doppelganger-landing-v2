@@ -33,7 +33,7 @@ export default function VideoSection() {
   return (
     <section
       ref={ref}
-      className='w-full h-screen overflow-hidden bg-[#2D2A3D] w-[1440px] m-auto scroll-smooth'
+      className='h-screen overflow-hidden bg-[#2D2A3D] w-[1440px] m-auto scroll-smooth'
     >
       <div className='w-full h-full px-[106px] py-[59px]'>
         <motion.div

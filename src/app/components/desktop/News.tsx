@@ -161,7 +161,7 @@ export default function News() {
       initial='hidden'
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='relative h-screen m-auto scroll-smooth z-10'
+      className='relative h-screen m-auto scroll-smooth z-10 w-[1440px]'
     >
       <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start gap-[38px] w-[1050px]'>
         <motion.div
