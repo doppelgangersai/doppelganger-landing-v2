@@ -166,7 +166,7 @@ export default function Revolver() {
       initial='hidden'
       animate={controls}
       variants={containerVariants}
-      className='relative h-screen flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'
+      className='relative h-[600px] flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'
     >
       <div className='grid grid-cols-12 w-full'>
         <div className='col-span-12 flex justify-center items-center relative'>
@@ -247,6 +247,78 @@ export default function Revolver() {
                 />
               </div>
             </div>
+
+            <motion.div
+              className='absolute top-[-300px] w-[650px] h-[650px] flex items-center'
+              variants={circleVariants}
+            >
+              <div
+                className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
+                style={{
+                  borderColor: activeButton.color,
+                  transform: `rotate(${rotation}deg)`,
+                }}
+              >
+                {buttons.map((button, index) => {
+                  const angle = (360 / buttons.length) * index - 90;
+                  const radius = 325;
+
+                  const x = radius * Math.cos((angle * Math.PI) / 180);
+                  const y = radius * Math.sin((angle * Math.PI) / 180);
+
+                  const activeIndex = buttons.findIndex(
+                    (b) => b.name === activeButton.name
+                  );
+
+                  const isNeighbor =
+                    index === (activeIndex + 1) % buttons.length ||
+                    index ===
+                      (activeIndex - 1 + buttons.length) % buttons.length;
+
+                  return (
+                    <div
+                      key={button.name}
+                      onClick={() => handleButtonClick(button)}
+                      className={`absolute cursor-pointer bg-[#181624] text-[#fff] font-inter rounded-[12px] flex items-center justify-center transition-all duration-700 
+                    ${
+                      activeButton.name === button.name
+                        ? 'scale-110'
+                        : 'scale-100'
+                    }
+                    ${isNeighbor ? 'opacity-0' : 'opacity-100'}`}
+                      style={{
+                        transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%)) rotate(${-rotation}deg)`,
+                        left: '50%',
+                        top: '50%',
+                      }}
+                    >
+                      <div
+                        className={styles.buttonText}
+                        style={
+                          {
+                            '--button-color': button.color,
+                          } as React.CSSProperties
+                        }
+                      >
+                        {button.name}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <motion.div
+                variants={buttonVariants}
+                className={`flex flex-col items-center justify-center pl-[200px] pr-[50px] font-montserrat gap-4`}
+              >
+                <p className='font-[800] text-[40px] text-white leading-[49px]'>
+                  {displayedButton.name}
+                </p>
+                <p className='font-[400] text-white text-[20px] leading-[25px]'>
+                  {displayedButton.description}
+                </p>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -308,29 +380,6 @@ export default function Revolver() {
                 </div>
               );
             })}
-          </div>
-
-          <div className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center'>
-            <Image
-              src='/robot_wrapper.svg'
-              alt={displayedButton.name.toLowerCase()}
-              width={334}
-              height={457}
-              className='w-[334px] h-[457px]'
-            />
-            <div
-              className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
-              ${
-                isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-              }`}
-            >
-              <Image
-                src={displayedButton.icon}
-                alt={displayedButton.name.toLowerCase()}
-                width={173}
-                height={259}
-              />
-            </div>
           </div>
 
           <motion.div
