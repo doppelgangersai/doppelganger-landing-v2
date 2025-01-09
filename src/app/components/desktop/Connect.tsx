@@ -141,7 +141,7 @@ export default function Connect() {
         </motion.div>
       </div>
 
-      <div className='flex justify-center items-center my-[21px]'>
+      <div className='flex justify-center items-center my-[21px] z-[200]'>
         <Image src='/arrow_2.svg' alt='Blob Hero' width={803} height={484} />
       </div>
     </section>

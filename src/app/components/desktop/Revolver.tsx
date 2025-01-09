@@ -171,7 +171,7 @@ export default function Revolver() {
       <div className='grid grid-cols-12 w-full'>
         <div className='col-span-12 flex justify-center items-center relative'>
           <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px] absolute top-[-300px]'>
-            Context-aware{''}
+            Context-aware{' '}
             <motion.span
               variants={{
                 ...textVariants,
@@ -204,29 +204,43 @@ export default function Revolver() {
             </motion.span>
           </h3>
         </div>
-      </div>
 
-      <div className='flex flex-col items-center justify-center z-[200]'></div>
-
-      <motion.div className='relative' variants={containerVariants}>
-        <motion.div
-          className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'
-          variants={circleVariants}
-        >
+        <div className='col-span-12 grid grid-cols-12 justify-center items-center relative'>
           <motion.div
-            className='absolute w-full h-full'
+            className='w-full h-full col-start-4 mt-[300px] relative -ml-[20px]'
             variants={circleVariants}
           >
+            <div className='absolute -translate-y-1/2 -translate-x-1/2 w-[334px] h-[457px] z-[200] mt-[31px]'>
+              <Image
+                src='/robot_wrapper.svg'
+                alt={displayedButton.name.toLowerCase()}
+                width={334}
+                height={457}
+                className='w-[334px] h-[457px]'
+              />
+              <div
+                className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
+              ${
+                isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+              }`}
+              >
+                <Image
+                  src={displayedButton.icon}
+                  alt={displayedButton.name.toLowerCase()}
+                  width={173}
+                  height={259}
+                />
+              </div>
+            </div>
+
             {[...Array(12)].map((_, i) => (
               <motion.div
                 key={i}
-                className='absolute rounded-full border border-[#8F6EFF]'
+                className='absolute rounded-full border border-[#8F6EFF] z-[0]'
                 style={{
                   width: `${412 + i * 50}px`,
                   height: `${412 + i * 50}px`,
                   filter: 'blur(0.625px)',
-                  top: '50%',
-                  left: 'calc(50% - 290px)',
                   transform: 'translate(-50%, -50%)',
                   zIndex: 0,
                   opacity: Math.max(0, (12 - i) / 12),
@@ -234,7 +248,14 @@ export default function Revolver() {
               />
             ))}
           </motion.div>
+        </div>
+      </div>
 
+      {/* <motion.div className='relative' variants={containerVariants}>
+        <motion.div
+          className='absolute top-[70px] left-[45%] w-[550px] h-[550px] flex items-center'
+          variants={circleVariants}
+        >
           <div
             className='w-full h-full absolute rounded-full border-2 transition-all duration-700'
             style={{
@@ -324,7 +345,7 @@ export default function Revolver() {
             </p>
           </motion.div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   );
 }
