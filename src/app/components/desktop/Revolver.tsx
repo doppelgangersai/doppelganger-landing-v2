@@ -168,39 +168,45 @@ export default function Revolver() {
       variants={containerVariants}
       className='relative h-screen flex flex-col pt-[45px] w-[1440px] m-auto scroll-smooth'
     >
-      <div className='flex flex-col items-center justify-center z-[200]'>
-        <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px]'>
-          <motion.span
-            variants={{
-              ...textVariants,
-              visible: {
-                ...textVariants.visible,
-                transition: {
-                  ...textVariants.visible.transition,
-                  delay: 0.2,
+      <div className='grid grid-cols-12 w-full'>
+        <div className='col-span-12 flex justify-center items-center relative'>
+          <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px] absolute top-[-300px]'>
+            Context-aware{''}
+            <motion.span
+              variants={{
+                ...textVariants,
+                visible: {
+                  ...textVariants.visible,
+                  transition: {
+                    ...textVariants.visible.transition,
+                    delay: 0.2,
+                  },
                 },
-              },
-            }}
-          >
-            Create
-          </motion.span>{' '}
-          personalized{' '}
-          <motion.span
-            variants={{
-              ...textVariants,
-              visible: {
-                ...textVariants.visible,
-                transition: {
-                  ...textVariants.visible.transition,
-                  delay: 0.2,
+              }}
+            >
+              AI agents
+            </motion.span>
+            <br />
+            Powered by{' '}
+            <motion.span
+              variants={{
+                ...textVariants,
+                visible: {
+                  ...textVariants.visible,
+                  transition: {
+                    ...textVariants.visible.transition,
+                    delay: 0.2,
+                  },
                 },
-              },
-            }}
-          >
-            AI Agents
-          </motion.span>
-        </h3>
+              }}
+            >
+              your Data
+            </motion.span>
+          </h3>
+        </div>
       </div>
+
+      <div className='flex flex-col items-center justify-center z-[200]'></div>
 
       <motion.div className='relative' variants={containerVariants}>
         <motion.div
