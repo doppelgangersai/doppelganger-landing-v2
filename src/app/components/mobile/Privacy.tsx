@@ -59,7 +59,19 @@ export default function Privacy() {
         )}
       </h2>
 
-      <Image src='/privacy_mobile.png' alt='Privacy' width={356} height={678} />
+      <motion.div
+        className='order-2 md:order-1'
+        variants={imageVariants}
+        initial='hidden'
+        animate={isInView ? 'visible' : 'hidden'}
+      >
+        <Image
+          src='/privacy_mobile.png'
+          alt='Privacy'
+          width={356}
+          height={678}
+        />
+      </motion.div>
     </section>
   );
 }

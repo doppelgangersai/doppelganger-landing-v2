@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { CustomArrowProps } from 'react-slick';
 
 interface NewsCardProps {
   date: {
@@ -103,8 +104,7 @@ export default function News() {
     nextArrow: <CustomNextArrow />,
   };
 
-  function CustomPrevArrow(props: any) {
-    const { onClick } = props;
+  function CustomPrevArrow({ onClick }: CustomArrowProps) {
     return (
       <button
         onClick={onClick}
@@ -129,8 +129,7 @@ export default function News() {
     );
   }
 
-  function CustomNextArrow(props: any) {
-    const { onClick } = props;
+  function CustomNextArrow({ onClick }: CustomArrowProps) {
     return (
       <button
         onClick={onClick}
