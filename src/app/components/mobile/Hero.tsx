@@ -39,7 +39,7 @@ export default function HeroMobile() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <Image
-            src='/blob_hero.svg'
+            src='/blob_hero.png'
             alt='Blob Hero'
             width={270}
             height={270}

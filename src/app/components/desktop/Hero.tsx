@@ -18,7 +18,7 @@ export default function Hero() {
           viewport={{ once: true }}
         >
           <Image
-            src='/blob_hero.svg'
+            src='/blob_hero.png'
             alt='Blob Hero'
             width={270}
             height={270}

@@ -6,7 +6,7 @@ const SOCIAL_ICONS = [
   { src: '/tiktok.svg', alt: 'TikTok', top: 22, left: 79 },
   { src: '/messenger.svg', alt: 'Messenger', top: 20, left: 86 },
   { src: '/linkedin.svg', alt: 'LinkedIn', top: 55, left: 93 },
-  { src: '/facebook.svg', alt: 'Facebook', top: 67, left: 81 },
+  { src: '/facebook.png', alt: 'Facebook', top: 67, left: 81 },
   { src: '/telegram.svg', alt: 'Telegram', top: 88, left: 78 },
   { src: '/x.svg', alt: 'X', top: 71, left: 67 },
   { src: '/whatsapp.svg', alt: 'WhatsApp', top: 70, left: 55 },
