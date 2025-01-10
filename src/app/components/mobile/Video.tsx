@@ -1,20 +1,7 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-
 export default function VideoMobile() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
   return (
-    <section ref={ref} className='w-full h-screen relative grid content-center'>
-      <motion.div
-        className=''
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={
-          isInView ? { scale: 1, opacity: 1 } : { scale: 0.95, opacity: 0 }
-        }
-        transition={{ delay: 0.2, duration: 0.8 }}
-      >
+    <section className='w-full h-screen relative grid content-center'>
+      <div>
         <video
           className='w-full object-cover'
           autoPlay
@@ -24,19 +11,14 @@ export default function VideoMobile() {
         >
           Your browser does not support the video tag.
         </video>
-      </motion.div>
-      <motion.div
-        className='p-4'
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-      >
+      </div>
+      <div className='p-4'>
         <p className='font-roboto text-[16px] leading-[22px] text-white text-center font-normal'>
           At Doppelgangers AI, we&apos;re revolutionizing the concept of
           personal assistance by harnessing the power of your data through your
           very own AI twin - your Doppelganger.
         </p>
-      </motion.div>
+      </div>
     </section>
   );
 }

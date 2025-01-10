@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 interface TeamMember {
   name: string;
@@ -36,36 +35,16 @@ const teamMembers: TeamMember[] = [
 ];
 
 export default function Team() {
-  const headerVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 50,
-        damping: 20,
-      },
-    },
-  };
-
   return (
     <section className='w-full mt-[124px] px-4'>
-      <motion.div variants={headerVariants} className='text-center mb-16'>
+      <div className='text-center mb-16'>
         <h1 className='text-6xl font-bold'>
           <span className='text-white'>
             Meet <br /> Our <br />
           </span>
-          <motion.span
-            initial={{ color: '#FFFFFF' }}
-            animate={{ color: '#6C3AF8' }}
-            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
-            className='text-[#6C3AF8]'
-          >
-            Team
-          </motion.span>
+          <span className='text-[#6C3AF8]'>Team</span>
         </h1>
-      </motion.div>
+      </div>
 
       <div className='relative flex flex-col items-center'>
         <div className='relative mb-16'>

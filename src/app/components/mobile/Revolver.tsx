@@ -1,5 +1,4 @@
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { buttons, RevolverButton } from '../desktop/Revolver';
 import styles from '../desktop/Revolver.module.css';
@@ -10,7 +9,6 @@ import sliderStyles from './Revolver.module.css';
 
 export default function Revolver() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const [rotation, setRotation] = useState(270);
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
@@ -19,15 +17,6 @@ export default function Revolver() {
   );
 
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [isInView, controls]);
 
   const handleButtonClick = (button: RevolverButton) => {
     const currentIndex = buttons.findIndex((b) => b.name === button.name);
@@ -41,48 +30,6 @@ export default function Revolver() {
     }, 350);
 
     setActiveButton(button);
-  };
-
-  const circleVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 200,
-        damping: 20,
-      },
-    },
-  };
-
-  const textVariants = {
-    hidden: {
-      color: '#FFFFFF',
-      y: 20,
-      opacity: 0,
-    },
-    visible: {
-      color: '#6C3AF8',
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1.8,
-        ease: 'easeOut',
-      },
-    },
   };
 
   const settings = {
@@ -104,41 +51,9 @@ export default function Revolver() {
       className='w-full relative mt-[100px] flex flex-col justify-center items-center'
     >
       <h3 className='font-montserrat text-white font-[800] text-[45px] leading-[46px] text-center mb-[146px]'>
-        Context-aware{' '}
-        <motion.span
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={{
-            ...textVariants,
-            visible: {
-              ...textVariants.visible,
-              transition: {
-                ...textVariants.visible.transition,
-                delay: 0.2,
-              },
-            },
-          }}
-        >
-          AI agents
-        </motion.span>
+        Context-aware <span>AI agents</span>
         <br />
-        Powered by{' '}
-        <motion.span
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={{
-            ...textVariants,
-            visible: {
-              ...textVariants.visible,
-              transition: {
-                ...textVariants.visible.transition,
-                delay: 0.4,
-              },
-            },
-          }}
-        >
-          your Data
-        </motion.span>
+        Powered by <span>your Data</span>
       </h3>
 
       <div className='w-full relative mb-[86px]'>
@@ -178,10 +93,7 @@ export default function Revolver() {
             ))}
           </Slider>
 
-          <motion.div
-            className='absolute left-1/2 w-[650px] h-[650px] flex items-center'
-            variants={circleVariants}
-          >
+          <div className='absolute left-1/2 w-[650px] h-[650px] flex items-center'>
             <div
               className='w-full h-full absolute rounded-full border-2 transition-all duration-700 z-[-10]'
               style={{
@@ -227,7 +139,7 @@ export default function Revolver() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {[...Array(12)].map((_, i) => (
             <div
@@ -245,8 +157,7 @@ export default function Revolver() {
         </div>
       </div>
 
-      <motion.div
-        variants={buttonVariants}
+      <div
         className={`flex flex-col p-[20px] font-montserrat gap-4 text-center`}
       >
         <p className='font-[800] text-[32px] text-white leading-[49px] pr-[15px]'>
@@ -255,7 +166,7 @@ export default function Revolver() {
         <p className='font-[400] text-white text-[20px] leading-[25px] pr-[15px]'>
           {displayedButton.description}
         </p>
-      </motion.div>
+      </div>
     </section>
   );
 }

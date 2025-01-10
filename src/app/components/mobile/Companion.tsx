@@ -1,41 +1,18 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import Image from 'next/image';
 
 export default function CompanionMobile() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, {
-    once: true,
-    amount: 0.3,
-  });
-
   return (
-    <section
-      ref={sectionRef}
-      className='relative px-4 pb-[100px] flex flex-col w-full overflow-hidden'
-    >
+    <section className='relative px-4 pb-[100px] flex flex-col w-full overflow-hidden'>
       <div className='flex justify-center items-center pt-8'>
         <h2 className='font-montserrat font-extrabold text-[45px] leading-[50px] text-center text-white'>
           Create Your Personal
           <br />
-          <motion.span
-            initial={{ color: '#FFFFFF' }}
-            animate={isInView ? { color: '#6C3AF8' } : { color: '#FFFFFF' }}
-            transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
-            className='text-[#6C3AF8]'
-          >
-            AI Companion
-          </motion.span>
+          <span className='text-[#6C3AF8]'>AI Companion</span>
         </h2>
       </div>
 
       <div className='flex flex-col gap-8 mt-8'>
-        <motion.div
-          className='w-full flex justify-center items-center relative'
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className='w-full flex justify-center items-center relative'>
           <Image
             src='/phone_companion.png'
             alt='Blob Hero'
@@ -59,7 +36,7 @@ export default function CompanionMobile() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
