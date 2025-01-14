@@ -7,7 +7,6 @@ import {
   ConnectDesktop,
   FooterDesktop,
   HeroDesktop,
-  NewsDesktop,
   PrivacyDesktop,
   RevolverDesktop,
   TeamDesktop,
@@ -17,13 +16,12 @@ import {
 import {
   CompanionMobile,
   ConnectMobile,
-  HeroMobile,
-  RevolverMobile,
-  VideoMobile,
-  PrivacyMobile,
-  TeamMobile,
-  NewsMobile,
   FooterMobile,
+  HeroMobile,
+  PrivacyMobile,
+  RevolverMobile,
+  TeamMobile,
+  VideoMobile,
 } from './components/mobile';
 
 export default function Home() {
@@ -38,7 +36,6 @@ export default function Home() {
       <RevolverMobile />
       <PrivacyMobile />
       <TeamMobile />
-      <NewsMobile />
       <FooterMobile />
     </>
   );
@@ -52,7 +49,6 @@ export default function Home() {
       <RevolverDesktop />
       <PrivacyDesktop />
       <TeamDesktop />
-      <NewsDesktop />
       <FooterDesktop />
     </>
   );
