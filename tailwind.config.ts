@@ -15,6 +15,11 @@ export default {
       fontFamily: {
         sans: ['var(--font-plus-jakarta-sans)'],
         montserrat: ['var(--font-montserrat)'],
+        roboto: ['var(--font-roboto)'],
+        inter: ['var(--font-inter)'],
+        geist: ['var(--font-geist-sans)'],
+        geistMono: ['var(--font-geist-mono)'],
+        plusJakartaSans: ['var(--font-plus-jakarta-sans)'],
       },
       keyframes: {
         float: {

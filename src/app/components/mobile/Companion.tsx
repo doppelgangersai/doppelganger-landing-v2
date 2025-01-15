@@ -13,13 +13,41 @@ export default function CompanionMobile() {
 
       <div className='flex flex-col gap-8 mt-8'>
         <div className='w-full flex justify-center items-center relative'>
-          <Image
-            src='/phone_companion.png'
-            alt='Blob Hero'
-            width={326}
-            height={659}
-            className='relative z-10'
-          />
+          <div
+            style={{
+              backgroundImage: "url('/robot_mobile.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              width: '326px',
+              height: '659px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '29px',
+              gap: '65px',
+            }}
+          >
+            <Image
+              src='/blob_hero.png'
+              alt='Blob Hero'
+              width={242}
+              height={243}
+              className=''
+            />
+
+            <p className='text-white text-center text-[20px] font-montserrat font-[400] leading-[24px]'>
+              Simply download our app and train your own private personalized AI
+              model, built to enhance your daily life.
+            </p>
+
+            <div className='w-full flex justify-center items-center bg-[#6C3AF8] rounded-[20px] px-[8px] py-[24px] z-[1000]'>
+              <span className='text-white text-[12px] font-roboto font-[400] leading-[14px]'>
+                Download App
+              </span>
+            </div>
+          </div>
 
           <div className='absolute inset-0 flex justify-center items-center'>
             {[...Array(24)].map((_, i) => (
