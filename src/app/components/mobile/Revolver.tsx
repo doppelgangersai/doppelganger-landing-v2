@@ -11,7 +11,7 @@ import sliderStyles from './Revolver.module.css';
 
 export default function Revolver() {
   const sectionRef = useRef<HTMLElement>(null);
-  const sliderRef = useRef<Slider>(null); // Add ref for Slider
+  const sliderRef = useRef<Slider>(null);
   const [rotation, setRotation] = useState(270);
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
   const [displayedButton, setDisplayedButton] = useState<RevolverButton>(
@@ -20,15 +20,13 @@ export default function Revolver() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [sliderInitialized, setSliderInitialized] = useState(false);
 
-  // Function to handle button clicks and slider navigation
   const handleButtonClick = useCallback(
     (button: RevolverButton, fromSlider = false) => {
-      if (isTransitioning && !fromSlider) return; // Prevent double transitions when clicking circles
+      if (isTransitioning && !fromSlider) return;
 
       const currentIndex = buttons.findIndex((b) => b.name === button.name);
       const angle = (360 / buttons.length) * currentIndex - 270;
 
-      // Slide only when the circles is clicked to update the carousel
       if (!fromSlider && sliderRef.current) {
         sliderRef.current.slickGoTo(currentIndex);
       }
@@ -46,7 +44,6 @@ export default function Revolver() {
     [isTransitioning, sliderRef]
   );
 
-  // Update the slider when buttons change
   useEffect(() => {
     if (!sliderRef.current || !sliderInitialized) return;
     const currentIndex = buttons.findIndex((b) => b.name === activeButton.name);
@@ -142,41 +139,45 @@ export default function Revolver() {
 
       <div className='w-full relative mb-[86px]'>
         <div className='inset-0 flex justify-center items-center z-[400]'>
-          <Slider
-            ref={sliderRef} // Attach ref to Slider
-            {...settings}
-            className={`w-full ${sliderStyles.sliderContainer} z-[400]`}
-          >
-            {buttons.map((button) => (
-              <div key={button.name} className='z-[400] flex justify-center'>
-                <div className='relative flex justify-center items-center'>
-                  <Image
-                    src='/robot_wrapper.svg'
-                    alt={displayedButton.name.toLowerCase()}
-                    width={226}
-                    height={456}
-                    className='w-[226px] h-[456px]'
-                  />
+          <div className='relative flex justify-center items-center'>
+            <Image
+              src='/robot_wrapper.svg'
+              alt={displayedButton.name.toLowerCase()}
+              width={226}
+              height={456}
+              className='w-[226px] h-[456px] absolute'
+            />
 
+            <Slider
+              ref={sliderRef}
+              {...settings}
+              className={`${sliderStyles.sliderContainer} z-[550] w-[226px] h-[456px] `}
+            >
+              {buttons.map((button) => (
+                <div
+                  key={button.name}
+                  className='flex justify-center relative z-[450]'
+                >
                   <div
-                    className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
-                                    ${
-                                      isTransitioning
-                                        ? 'opacity-0 scale-95'
-                                        : 'opacity-100 scale-100'
-                                    }`}
+                    className={`flex items-center justify-center gap-3 w-[226px] h-[456px] text-white transition-all duration-700 ease-in-out z-[600]
+                        ${
+                          isTransitioning
+                            ? 'opacity-0 scale-95'
+                            : 'opacity-100 scale-100'
+                        }`}
                   >
                     <Image
                       src={button.icon || '/placeholder.svg'}
                       alt={button.name.toLowerCase()}
                       width={173}
                       height={259}
+                      className='z-[600]'
                     />
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
 
           <div className='absolute left-1/2 w-[650px] h-[650px] flex items-center'>
             <div
