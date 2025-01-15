@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { motion, useInView, useScroll } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 
 export default function VideoSection() {
   const ref = React.useRef(null);
@@ -46,7 +46,7 @@ export default function VideoSection() {
               animate={isInView ? { x: 0 } : { x: -50 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              we're revolutionizing the concept of personal assistance by
+              we&apos;re revolutionizing the concept of personal assistance by
               harnessing the power of your data through your very own private
               personalized AI model - Doppelganger.
             </motion.p>
