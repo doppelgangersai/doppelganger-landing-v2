@@ -18,45 +18,43 @@ const teamMembers: TeamMember[] = [
     name: 'Andrew Krynin',
     role: 'CEO',
     image: '/Andrew.png',
-    description: `Andrew Krynin (CEO) is a serial entrepreneur
-      who won a Ukraine national state grant (link) in 2020 with a social media boosting app.
-      ex Near Protocol Ecosystem lead & Head of Marketing at Aurora`,
+    description: `Serial entrepreneur ex Near Protocol team Aurora.`,
     companies: ['/near.png', '/triangle.png'],
   },
   {
     name: 'Freddy Snijder',
     role: 'CTO',
     image: '/freddy.png',
-    description: `is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML`,
-    companies: ['/shell.png', '/ing.png'],
+    description: `Serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML.`,
+    companies: ['/shell.svg', '/ing.svg'],
   },
   {
     name: 'Pavlo Shepetukha',
     role: 'CPO',
     image: '/pavlo.png',
-    description: `Lead product designer with over 10 Years of experience who led the redesign of Vodafone Ukraine App. `,
-    companies: ['/vodafon.png', '/epam.png'],
+    description: `Lead product designer with over 10 Years of experience ex Vodafone Ukraine.`,
+    companies: ['/vodafon.png', '/epam.svg'],
   },
   {
     name: 'Sandro Lovnički',
     role: '',
     image: '/sandro.png',
-    description: `Computer Scientist & software Engineer, community Leader of Google Developers Zagreb and Flutter Croatia`,
-    companies: ['/flatter.png'],
+    description: `Computer Scientist & software Engineer, community Leader of Google Developers Zagreb and Flutter Croatia.`,
+    companies: ['/flutter.svg'],
   },
   {
     name: 'Felix Meng',
     role: '',
     image: '/felix.png',
-    description: `Stanford Accelerator batch 2024. Created a RAG with fully homomorphic encryption, and private information retrieval.`,
-    companies: ['/stanford.png'],
+    description: `Stanford Accelerator batch 2024. Created the XRAG powering Doppelgangers private information retrieval.`,
+    companies: ['/stanford.svg'],
   },
   {
     name: 'Liwen Ouyang',
     role: '',
     image: '/liwen.png',
     description: `Google 2022 Intern Stanford MS 2024. Created framework that allows agents to query datasets without exposing the prompt.`,
-    companies: ['/stanford.png', '/google.png'],
+    companies: ['/stanford.svg', '/google.svg'],
   },
 ];
 
@@ -109,22 +107,21 @@ export default function Team() {
       className='min-h-screen flex flex-col items-center py-16 px-4 w-[1440px] m-auto scroll-smooth'
     >
       <motion.div variants={headerVariants} className='text-center mb-16'>
-        <p className='text-white/60 mb-4'>Our Team</p>
         <h1 className='text-6xl font-bold'>
-          <span className='text-white'>Meet Our </span>
+          <span className='text-white'>Meet our </span>
           <motion.span
             initial={{ color: '#FFFFFF' }}
             animate={{ color: '#6C3AF8' }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
             className='text-[#6C3AF8]'
           >
-            Team
+            Superstar Team
           </motion.span>
         </h1>
       </motion.div>
 
       <div className='relative w-full max-w-7xl py-8'>
-        <div className='flex overflow-x-auto snap-x snap-mandatory gap-[20px] pb-4 scrollbar-hide overflow-y-hidden'>
+        <div className='flex overflow-x-auto snap-x snap-mandatory gap-[20px] pb-4 scrollbar-custom overflow-y-hidden'>
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -139,7 +136,7 @@ export default function Team() {
               <div className='flex flex-col justify-center items-center gap-[38px] h-full'>
                 <motion.div className='relative'>
                   <Image
-                    src={member.image}
+                    src={member.image || '/placeholder.svg'}
                     alt={member.name}
                     width={292}
                     height={301}
@@ -169,9 +166,10 @@ export default function Team() {
                       key={i}
                       src={company}
                       alt='Company logo'
-                      width={33.11}
-                      height={33.59}
-                      className='opacity-70 w-full h-full scale-[1.5]'
+                      width={0}
+                      height={0}
+                      sizes='100vw'
+                      className='w-auto h-auto'
                     />
                   ))}
                 </div>
