@@ -42,7 +42,7 @@ export default function CompanionMobile() {
               model, built to enhance your daily life.
             </p>
 
-            <div className='w-full flex justify-center items-center bg-[#6C3AF8] rounded-[20px] px-[8px] py-[24px] z-[1000]'>
+            <div className='w-full flex justify-center items-center bg-[#6C3AF8] rounded-[20px] px-[8px] py-[24px] z-[1000] active:scale-95 transition-transform duration-200 cursor-pointer hover:bg-[#5c31d3]'>
               <span className='text-white text-[12px] font-roboto font-[400] leading-[14px]'>
                 Download App
               </span>

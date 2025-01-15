@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useCallback, useMemo } from 'react';
+import { useRef, useState, useCallback, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { buttons, RevolverButton } from '../desktop/Revolver';
 import styles from '../desktop/Revolver.module.css';
@@ -11,26 +11,47 @@ import sliderStyles from './Revolver.module.css';
 
 export default function Revolver() {
   const sectionRef = useRef<HTMLElement>(null);
+  const sliderRef = useRef<Slider>(null); // Add ref for Slider
   const [rotation, setRotation] = useState(270);
   const [activeButton, setActiveButton] = useState<RevolverButton>(buttons[0]);
   const [displayedButton, setDisplayedButton] = useState<RevolverButton>(
     buttons[0]
   );
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [sliderInitialized, setSliderInitialized] = useState(false);
 
-  const handleButtonClick = useCallback((button: RevolverButton) => {
-    const currentIndex = buttons.findIndex((b) => b.name === button.name);
-    const angle = (360 / buttons.length) * currentIndex - 270;
-    setRotation(-angle);
-    setIsTransitioning(true);
+  // Function to handle button clicks and slider navigation
+  const handleButtonClick = useCallback(
+    (button: RevolverButton, fromSlider = false) => {
+      if (isTransitioning && !fromSlider) return; // Prevent double transitions when clicking circles
 
-    setTimeout(() => {
-      setDisplayedButton(button);
-      setIsTransitioning(false);
-    }, 350);
+      const currentIndex = buttons.findIndex((b) => b.name === button.name);
+      const angle = (360 / buttons.length) * currentIndex - 270;
 
-    setActiveButton(button);
-  }, []);
+      // Slide only when the circles is clicked to update the carousel
+      if (!fromSlider && sliderRef.current) {
+        sliderRef.current.slickGoTo(currentIndex);
+      }
+
+      setRotation(-angle);
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        setDisplayedButton(button);
+        setIsTransitioning(false);
+      }, 350);
+
+      setActiveButton(button);
+    },
+    [isTransitioning, sliderRef]
+  );
+
+  // Update the slider when buttons change
+  useEffect(() => {
+    if (!sliderRef.current || !sliderInitialized) return;
+    const currentIndex = buttons.findIndex((b) => b.name === activeButton.name);
+    sliderRef.current.slickGoTo(currentIndex);
+  }, [activeButton.name, sliderRef, sliderInitialized]);
 
   const settings = useMemo(
     () => ({
@@ -40,13 +61,17 @@ export default function Revolver() {
       slidesToShow: 1,
       slidesToScroll: 1,
       beforeChange: (_oldIndex: number, newIndex: number) => {
+        if (!sliderInitialized) return;
         const newButton = buttons[newIndex];
-        handleButtonClick(newButton);
+        handleButtonClick(newButton, true);
+      },
+      afterChange: () => {
+        setSliderInitialized(true);
       },
       dotsClass: `${sliderStyles.dots}`,
       cssEase: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
     }),
-    [handleButtonClick]
+    [handleButtonClick, sliderInitialized]
   );
 
   const renderButtons = useMemo(
@@ -118,8 +143,9 @@ export default function Revolver() {
       <div className='w-full relative mb-[86px]'>
         <div className='inset-0 flex justify-center items-center z-[400]'>
           <Slider
+            ref={sliderRef} // Attach ref to Slider
             {...settings}
-            className={`w-full ${sliderStyles.sliderContainer}`}
+            className={`w-full ${sliderStyles.sliderContainer} z-[400]`}
           >
             {buttons.map((button) => (
               <div key={button.name} className='z-[400] flex justify-center'>
@@ -134,11 +160,11 @@ export default function Revolver() {
 
                   <div
                     className={`flex items-center gap-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white transition-all duration-700 ease-in-out
-                    ${
-                      isTransitioning
-                        ? 'opacity-0 scale-95'
-                        : 'opacity-100 scale-100'
-                    }`}
+                                    ${
+                                      isTransitioning
+                                        ? 'opacity-0 scale-95'
+                                        : 'opacity-100 scale-100'
+                                    }`}
                   >
                     <Image
                       src={button.icon || '/placeholder.svg'}
