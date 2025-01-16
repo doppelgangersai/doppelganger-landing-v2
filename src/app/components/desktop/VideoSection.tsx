@@ -1,9 +1,19 @@
+'use client';
+
 import { motion, useInView } from 'framer-motion';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 export default function VideoSection() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const variants = useMemo(
+    () => ({
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+    }),
+    []
+  );
 
   return (
     <section
@@ -12,8 +22,9 @@ export default function VideoSection() {
     >
       <motion.div
         className='max-w-3xl w-full text-center'
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        variants={variants}
+        initial='initial'
+        animate={isInView ? 'animate' : 'initial'}
         transition={{ duration: 0.8 }}
       >
         <h2 className='text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight '>

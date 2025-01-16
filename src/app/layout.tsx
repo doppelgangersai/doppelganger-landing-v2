@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import { Providers } from './providers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -54,7 +55,9 @@ export default function RootLayout({
       lang='en'
       className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${montserrat.variable} ${roboto.variable} ${inter.variable} antialiased`}
     >
-      <body className='bg-[#2D2A3D]'>{children}</body>
+      <body className='bg-[#2D2A3D]'>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

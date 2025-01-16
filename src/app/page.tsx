@@ -1,61 +1,22 @@
 'use client';
 
 import { useDeviceType } from '@/hooks/useDeviceType';
+import dynamic from 'next/dynamic';
 
-import {
-  CompanionDesktop,
-  ConnectDesktop,
-  FooterDesktop,
-  HeroDesktop,
-  PrivacyDesktop,
-  RevolverDesktop,
-  TeamDesktop,
-  VideoDesktop,
-} from './components/desktop';
+const DesktopGroup = dynamic(() => import('./components/DesktopGroup'), {
+  ssr: false,
+});
 
-import {
-  CompanionMobile,
-  ConnectMobile,
-  FooterMobile,
-  HeroMobile,
-  PrivacyMobile,
-  RevolverMobile,
-  TeamMobile,
-  VideoMobile,
-} from './components/mobile';
+const MobileGroup = dynamic(() => import('./components/MobileGroup'), {
+  ssr: false,
+});
 
 export default function Home() {
   const isMobile = useDeviceType();
 
-  const mobileGroup = (
-    <>
-      <HeroMobile />
-      <VideoMobile />
-      <CompanionMobile />
-      <ConnectMobile />
-      <RevolverMobile />
-      <PrivacyMobile />
-      <TeamMobile />
-      <FooterMobile />
-    </>
-  );
-
-  const desktopGroup = (
-    <>
-      <HeroDesktop />
-      <VideoDesktop />
-      <CompanionDesktop />
-      <ConnectDesktop />
-      <RevolverDesktop />
-      <PrivacyDesktop />
-      <TeamDesktop />
-      <FooterDesktop />
-    </>
-  );
-
   return (
-    <div className='overflow-hidden'>
-      {isMobile ? mobileGroup : desktopGroup}
+    <div className='overflow-hidden' suppressHydrationWarning>
+      {isMobile ? <MobileGroup /> : <DesktopGroup />}
     </div>
   );
 }
