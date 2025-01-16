@@ -13,22 +13,22 @@ const teamMembers: TeamMember[] = [
     name: 'Andrew Krynin',
     role: 'CEO',
     image: '/Andrew.png',
-    description: `Andrew Krynin (CEO) is a serial entrepreneur who won a Ukraine national state grant (link) in 2020 with a social media boosting app. ex Near Protocol Ecosystem lead & Head of Marketing at Aurora`,
-    companies: ['/near.png', '/triangle.png'],
+    description: `Serial entrepreneur ex Near Protocol team Aurora.`,
+    companies: ['/near.svg', '/triangle.svg'],
   },
   {
     name: 'Pavlo Shepetukha',
     role: 'CPO',
     image: '/pavlo.png',
-    description: `Lead product designer with over 10 Years of experience who led the redesign of Vodafone Ukraine App.`,
-    companies: ['/vodafon.png', '/epam.png'],
+    description: `Lead product designer with over 10 Years of experience ex Vodafone Ukraine.`,
+    companies: ['/vodafon.svg', '/epam.svg'],
   },
   {
     name: 'Freddy Snijder',
     role: 'CTO',
     image: '/freddy.png',
-    description: `is a serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML`,
-    companies: ['/shell.png', '/ing.png'],
+    description: `Serial entrepreneur ex principal AI research scientist at Shell with 20 years of experience in AI and ML.`,
+    companies: ['/shell.svg', '/ing.svg'],
   },
 ];
 
@@ -69,9 +69,9 @@ export default function Team() {
                   key={i}
                   src={company}
                   alt='Company logo'
-                  width={24}
-                  height={24}
-                  className='opacity-70'
+                  width={0}
+                  height={0}
+                  className='w-auto h-auto'
                 />
               ))}
             </div>
@@ -103,9 +103,9 @@ export default function Team() {
                     key={i}
                     src={company}
                     alt='Company logo'
-                    width={24}
-                    height={24}
-                    className='opacity-70'
+                    width={0}
+                    height={0}
+                    className='w-auto h-auto'
                   />
                 ))}
               </div>
@@ -136,9 +136,9 @@ export default function Team() {
                     key={i}
                     src={company}
                     alt='Company logo'
-                    width={24}
-                    height={24}
-                    className='opacity-70'
+                    width={0}
+                    height={0}
+                    className='w-auto h-auto'
                   />
                 ))}
               </div>

@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
     role: 'CEO',
     image: '/Andrew.png',
     description: `Serial entrepreneur ex Near Protocol team Aurora.`,
-    companies: ['/near.png', '/triangle.png'],
+    companies: ['/near.svg', '/triangle.svg'],
   },
   {
     name: 'Freddy Snijder',
@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     role: 'CPO',
     image: '/pavlo.png',
     description: `Lead product designer with over 10 Years of experience ex Vodafone Ukraine.`,
-    companies: ['/vodafon.png', '/epam.svg'],
+    companies: ['/vodafon.svg', '/epam.svg'],
   },
   {
     name: 'Sandro Lovnički',
