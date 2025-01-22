@@ -124,21 +124,23 @@ export default function Footer() {
                   Legal Info
                 </h3>
                 <ul className='space-y-1 text-right'>
-                  {['Terms & Conditions', 'Privacy Policy', 'About Us'].map(
-                    (item) => (
-                      <li
-                        key={item}
-                        className='opacity-50 hover:opacity-100 transition-opacity'
+                  {[
+                    { link: 'terms', title: 'Terms & Conditions' },
+                    { link: 'privacy', title: 'Privacy Policy' },
+                    { link: 'about', title: 'About Us' },
+                  ].map((item) => (
+                    <li
+                      key={item.title}
+                      className='opacity-50 hover:opacity-100 transition-opacity'
+                    >
+                      <Link
+                        href={`/${item.link}`}
+                        className='text-white text-[14px] font-light'
                       >
-                        <Link
-                          href='#'
-                          className='text-white text-[14px] font-light'
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    )
-                  )}
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </motion.div>
 

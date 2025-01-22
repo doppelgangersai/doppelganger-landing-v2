@@ -73,10 +73,10 @@ export default function Footer() {
               <span>© 2024 Doppelgangers.ai</span>
             </div>
             <div className='flex gap-8 justify-between'>
-              <a href='#' className='hover:text-white'>
+              <a href='/privacy' className='hover:text-white'>
                 Privacy Policy
               </a>
-              <a href='#' className='hover:text-white'>
+              <a href='/terms' className='hover:text-white'>
                 Terms & Conditions
               </a>
             </div>
