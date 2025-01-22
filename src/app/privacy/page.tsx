@@ -32,18 +32,21 @@ const Privacy = () => {
                     data for monetary consideration.
                   </p>
                   <p>
-                    When we use the terms "Doppelganger", "Doppelgangers.ai",
-                    "Dioscuri Inc.", "we", "us", or "our" in this Privacy
-                    Notice, we are referring to Doppelgangers.ai. When we use
-                    the terms "Doppelgangers.ai Users," "you" or "your" in this
-                    Privacy Notice, we are referring to users of
-                    Doppelgangers.ai's Services, as well as users of our website
-                    www.doppelgangers.ai (the "Website"). When we use the term
-                    "Doppelgangers.ai Service" or "Doppelganger," we are
-                    referring to all of the Services that we offer on our own
-                    behalf, accessible via the Website, and any other
-                    Doppelgangers.ai application, software, product, or service
-                    licensed, downloaded or otherwise accessed by you.
+                    When we use the terms &ldquo;Doppelganger&rdquo;,
+                    &ldquo;Doppelgangers.ai&rdquo;, &ldquo;Dioscuri Inc.&rdquo;,
+                    &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo; in
+                    this Privacy Notice, we are referring to Doppelgangers.ai.
+                    When we use the terms &ldquo;Doppelgangers.ai Users,&rdquo;
+                    &ldquo;you&rdquo; or &ldquo;your&rdquo; in this Privacy
+                    Notice, we are referring to users of Doppelgangers.ai&apos;s
+                    Services, as well as users of our website
+                    www.doppelgangers.ai (the &ldquo;Website&rdquo;). When we
+                    use the term &ldquo;Doppelgangers.ai Service&rdquo; or
+                    &ldquo;Doppelganger,&rdquo; we are referring to all of the
+                    Services that we offer on our own behalf, accessible via the
+                    Website, and any other Doppelgangers.ai application,
+                    software, product, or service licensed, downloaded or
+                    otherwise accessed by you.
                   </p>
                   <p>
                     As you use the Doppelgangers.ai Service and interact with
@@ -51,11 +54,12 @@ const Privacy = () => {
                     information from and about you in order to provide you with
                     access to the Doppelgangers.ai Service, enhance your
                     experience while using the Doppelgangers.ai Service, and
-                    interact with you. This Privacy Notice (the "Notice")
-                    describes how Doppelgangers.ai collects, uses, and discloses
-                    information collected through the Doppelgangers.ai Service
-                    and Website (collectively, the "Services"), and what choices
-                    you have with respect to such information.
+                    interact with you. This Privacy Notice (the
+                    &ldquo;Notice&rdquo;) describes how Doppelgangers.ai
+                    collects, uses, and discloses information collected through
+                    the Doppelgangers.ai Service and Website (collectively, the
+                    &ldquo;Services&rdquo;), and what choices you have with
+                    respect to such information.
                   </p>
 
                   <p>
@@ -106,8 +110,8 @@ const Privacy = () => {
                       attachments, files, conversations, associated metadata,
                       and other content submitted through or uploaded to the
                       Doppelgangers.ai Service utilized for the Doppelganger
-                      training (collectively, the "User Content"). You will be
-                      able to control your own User Content;
+                      training (collectively, the &ldquo;User Content&rdquo;).
+                      You will be able to control your own User Content;
                     </li>
                     <li className='ml-4'>
                       Information you provide as part of your account
@@ -115,18 +119,19 @@ const Privacy = () => {
                       name, organization name, address, telephone number, email
                       address, username and password; optional information that
                       you may choose to provide, such as a photograph or basic
-                      demographic data; (collectively, the "Account
-                      Information"); and
+                      demographic data; (collectively, the &ldquo;Account
+                      Information&rdquo;); and
                     </li>
                     <li className='ml-4'>
                       Information you provide in other interactions with us,
                       such as requests or questions you submit to us via forms,
                       email, or through a third-party communication website; and
                       requests for customer support and technical assistance
-                      (collectively, "Other Information," and, together with
-                      "Account Information", collectively the "Operational Data"
-                      over which Doppelgangers.ai retains control in order to
-                      provide our Doppelgangers.ai Services to you).
+                      (collectively, &ldquo;Other Information,&rdquo; and,
+                      together with &ldquo;Account Information&rdquo;,
+                      collectively the &ldquo;Operational Data&rdquo; over which
+                      Doppelgangers.ai retains control in order to provide our
+                      Doppelgangers.ai Services to you).
                     </li>
                   </ul>
 
@@ -151,8 +156,8 @@ const Privacy = () => {
                     As is true of most digital platforms, we and our third-party
                     partners may collect personal information automatically from
                     you when you visit or interact with our websites and other
-                    Services ("Service Usage Information"). Such information
-                    includes:
+                    Services (&ldquo;Service Usage Information&rdquo;). Such
+                    information includes:
                   </p>
                   <ul className='space-y-3 mb-6'>
                     <li className='ml-4'>
@@ -178,7 +183,8 @@ const Privacy = () => {
                       when exiting our Services, as well as your usage and
                       activity on our Services, such as the links, objects,
                       products and benefits you view, click, or otherwise
-                      interact with (also known as "Clickstream Data").
+                      interact with (also known as &ldquo;Clickstream
+                      Data&rdquo;).
                     </li>
                     <li className='ml-4'>
                       <strong>Log files</strong>– When you use the Service, our
@@ -195,13 +201,13 @@ const Privacy = () => {
                       device from which you are accessing the Service (e.g.,
                       approximate geographic location inferred from an IP
                       address) or more precise location when permitted by law
-                      ("Location Data").
+                      (&ldquo;Location Data&rdquo;).
                     </li>
                   </ul>
 
                   <p className='mb-4'>
                     For more information about our, and our third-party
-                    providers and partners' use of cookies and related
+                    providers and partners&apos; use of cookies and related
                     technologies to collect information automatically on our
                     online services, and the choices you may have in relation to
                     those practices, please visit our Cookie Notice below.
@@ -277,8 +283,8 @@ const Privacy = () => {
 
                   <p className='mb-4'>
                     If you provide Doppelgangers.ai access to your Google Gmail
-                    data, Doppelgangers.ai's use of that Google Gmail data will
-                    be subject to the following additional restrictions:
+                    data, Doppelgangers.ai&apos;s use of that Google Gmail data
+                    will be subject to the following additional restrictions:
                   </p>
 
                   <ul className='space-y-3 mb-6'>
@@ -317,9 +323,9 @@ const Privacy = () => {
                   </ul>
 
                   <p className='mb-4'>
-                    Our Service's use and transfer of information received from
-                    Google APIs to any other app will adhere to the Google API
-                    Services User Data Policy, including the Limited Use
+                    Our Service&apos;s use and transfer of information received
+                    from Google APIs to any other app will adhere to the Google
+                    API Services User Data Policy, including the Limited Use
                     Requirements.
                   </p>
 
@@ -410,7 +416,7 @@ const Privacy = () => {
                       purposes identified in this Privacy Policy. When we send
                       the invitation to your contacts, we may or may not include
                       your name and photo, along with a message conveying that
-                      their colleagues are using Peronsla.ai. We may send
+                      their colleagues are using Doppelgangers.ai. We may send
                       reminder emails to these contacts with or without
                       including your name and photo. Please note that we link
                       some of the personal information we collect through the
@@ -437,7 +443,7 @@ const Privacy = () => {
                     <li className='ml-4'>
                       Related notices, such as about security and fraud. Because
                       these communications are an important part of the
-                      Perosnal.ai Service, you may not opt out of them
+                      Doppelgangers.ai Service, you may not opt out of them
                     </li>
                     <li className='ml-4'>
                       To communicate with you about promotions, offers, and news
@@ -552,11 +558,11 @@ const Privacy = () => {
                     We may aggregate and/or anonymize information collected
                     through the Doppelgangers.ai Service so that such
                     information can no longer be linked to you or your device
-                    ("Aggregated/Anonymized Information"). We may use
-                    Aggregated/Anonymized Information for any purpose, including
-                    without limitation for research and analytics, and may also
-                    share such data with any third parties, including partners,
-                    affiliates, services providers, and others.
+                    (&ldquo;Aggregated/Anonymized Information&rdquo;). We may
+                    use Aggregated/Anonymized Information for any purpose,
+                    including without limitation for research and analytics, and
+                    may also share such data with any third parties, including
+                    partners, affiliates, services providers, and others.
                   </p>
 
                   <h4 className='text-lg font-semibold mb-4'>
@@ -603,11 +609,12 @@ const Privacy = () => {
                     H. Google API Limited Use Disclosure
                   </h4>
                   <p className='mb-4'>
-                    Doppelgangers.ai Service's use and transfer to any other app
-                    of information received from Google APIs will adhere to the
-                    Google API Services User Data Policy, including the Limited
-                    Use requirements. For more information, please visit the
-                    Google API Services User Data Policy page.
+                    Doppelgangers.ai Service&apos;s use and transfer to any
+                    other app of information received from Google APIs will
+                    adhere to the Google API Services User Data Policy,
+                    including the Limited Use requirements. For more
+                    information, please visit the Google API Services User Data
+                    Policy page.
                   </p>
                 </section>
 
@@ -664,15 +671,15 @@ const Privacy = () => {
                       preferences instructions in the marketing communications;
                     </li>
                     <li className='ml-4'>
-                      When available, accessing the "Unsubscribe" or
-                      "Communication Preferences" settings in your account
-                      profile page;
+                      When available, accessing the &ldquo;Unsubscribe&rdquo; or
+                      &ldquo;Communication Preferences&rdquo; settings in your
+                      account profile page;
                     </li>
                     <li className='ml-4'>
                       Sending a request to privacy@doppelgangers.ai. with the
-                      words "Opt Out" or "Communication Preferences" in the
-                      subject line, the address or number at which we contacted
-                      you and your request; or
+                      words &ldquo;Opt Out&rdquo; or &ldquo;Communication
+                      Preferences&rdquo; in the subject line, the address or
+                      number at which we contacted you and your request; or
                     </li>
                     <li className='ml-4'>
                       Sending a request to the following address identifying the
@@ -732,8 +739,8 @@ const Privacy = () => {
                     knowingly collect any personal information from children. In
                     the event you have knowledge that a child has provided us
                     with any such information in violation of this Notice,
-                    please contact Doppelgangers.ai via the "Doppelgangers.ai
-                    Contact Info" section below.
+                    please contact Doppelgangers.ai via the
+                    &ldquo;Doppelgangers.ai Contact Info&rdquo; section below.
                   </p>
                 </section>
 
@@ -743,14 +750,15 @@ const Privacy = () => {
                   </h3>
 
                   <p className='mb-4'>
-                    California Shine the Light Disclosure. The California "Shine
-                    the Light" law gives residents of California the right under
-                    certain circumstances to request information from us
-                    regarding the manner in which we share certain categories of
-                    personal information (as defined in the Shine the Light law)
-                    with third parties for their direct marketing purposes. We
-                    do not share your personal information with third parties
-                    for their own direct marketing purposes. ‍
+                    California Shine the Light Disclosure. The California
+                    &ldquo;Shine the Light&rdquo; law gives residents of
+                    California the right under certain circumstances to request
+                    information from us regarding the manner in which we share
+                    certain categories of personal information (as defined in
+                    the Shine the Light law) with third parties for their direct
+                    marketing purposes. We do not share your personal
+                    information with third parties for their own direct
+                    marketing purposes. ‍
                   </p>
 
                   <p className='mb-4'>
@@ -820,11 +828,11 @@ const Privacy = () => {
                     providers may also use other, related technologies to
                     collect this information, such as web beacons, pixels,
                     embedded scripts, location-identifying technologies and
-                    logging technologies (collectively, "cookies").‍
+                    logging technologies (collectively, &ldquo;cookies&rdquo;).‍
                   </p>
 
                   <h4 className='text-lg font-semibold mb-4'>
-                    What We Collect When Using Cookies ‍
+                    What We Collect When Using Cookies
                   </h4>
                   <p className='mb-4'>
                     ‍We and our third-party providers and partners may use
@@ -902,10 +910,10 @@ const Privacy = () => {
 
                   <p className='mb-4'>
                     Many of our websites use Google Analytics, a web analytics
-                    service provided by Google, Inc. ("Google"). For more
-                    information on the use of Google Analytics, please visit
-                    Google's privacy policy here. You can also view Google's
-                    currently available opt-out options here.‍
+                    service provided by Google, Inc. (&ldquo;Google&rdquo;). For
+                    more information on the use of Google Analytics, please
+                    visit Google&apos;s privacy policy here. You can also view
+                    Google&apos;s currently available opt-out options here.‍
                   </p>
 
                   <h4 className='text-lg font-semibold mb-4'>
@@ -930,7 +938,8 @@ const Privacy = () => {
                   <p className='mb-4'>
                     ‍We will update this Cookie Notice from time to time. When
                     we make changes to this Cookie Notice, we will change the
-                    "Last Updated" at the beginning of this Cookie Notice.
+                    &ldquo;Last Updated&rdquo; at the beginning of this Cookie
+                    Notice.
                   </p>
 
                   <h4 className='text-lg font-semibold mb-4'>Contact Us</h4>

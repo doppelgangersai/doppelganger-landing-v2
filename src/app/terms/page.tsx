@@ -14,15 +14,15 @@ export default function Terms() {
         <div className='space-y-6 text-gray-300'>
           <p className='text-sm md:text-base leading-relaxed'>
             Welcome to www.doppelgangers.ai, a website of Dioscuri Inc.
-            (&quot;Personal.ai&quot;, &quot;us&quot; or &quot;we&quot;). Your
-            Doppelgangers AI works by training on your private digital memory
-            vault, including photos, text and other uploaded materials, referred
-            to as a Data Vault. This allows your AI to learn more about you and
-            better predict your needs and preferences. The larger your Data
-            Vault is, the more information your Doppelgangers AI can remember
-            about you (collectively, the &quot;Doppelgangers.ai Services&quot;
-            or &quot;Doppelgangers AI&quot;). Data Vault data is owned by the
-            user and will not be sold to third parties or used for
+            (&quot;Doppelgangers.ai&quot;, &quot;us&quot; or &quot;we&quot;).
+            Your Doppelgangers AI works by training on your private digital
+            memory vault, including photos, text and other uploaded materials,
+            referred to as a Data Vault. This allows your AI to learn more about
+            you and better predict your needs and preferences. The larger your
+            Data Vault is, the more information your Doppelgangers AI can
+            remember about you (collectively, the &quot;Doppelgangers.ai
+            Services&quot; or &quot;Doppelgangers AI&quot;). Data Vault data is
+            owned by the user and will not be sold to third parties or used for
             interest-based advertising.
           </p>
 
@@ -30,7 +30,7 @@ export default function Terms() {
             These Doppelgangers.ai Terms of Service (&quot;Terms&quot; or
             &quot;Agreement&quot;) outline the terms that govern your use of the
             Doppelgangers.ai Services. Please read these Terms carefully. They
-            are a legally binding contract between you and Personal.ai. By
+            are a legally binding contract between you and Doppelgangers.ai. By
             accepting these Terms, using or accessing the Doppelgangers.ai
             Services or by registering for a Doppelgangers.ai account, you are
             agreeing to be bound by these Terms. If you do not agree with these
@@ -48,10 +48,10 @@ export default function Terms() {
             organization, you are agreeing to these Terms for that organization
             and represent and warrant to Doppelgangers.ai that you have the
             authority to bind that organization to these Terms (in which event,
-            "you" and "your" will refer to that organization) unless that
-            organization has a separate paid contract in effect with us, in
-            which event the terms of that contract will govern your use of the
-            Doppelgangers.ai Services.
+            &quot;you&quot; and &quot;your&quot; will refer to that
+            organization) unless that organization has a separate paid contract
+            in effect with us, in which event the terms of that contract will
+            govern your use of the Doppelgangers.ai Services.
           </p>
 
           <p className='text-sm md:text-base leading-relaxed'>
@@ -123,7 +123,7 @@ export default function Terms() {
               are responsible for your account. If you become aware of any
               unauthorized use of the Doppelgangers.ai Services or your account,
               or have any questions about your account please contact
-              Doppelgangers.ai at privacy@personal.ai.
+              Doppelgangers.ai at privacy@doppelgangers.ai.
             </p>
           </div>
 
@@ -171,9 +171,9 @@ export default function Terms() {
 
             <p className='text-sm md:text-base leading-relaxed'>
               If you discontinue your subscription or do not maintain an active
-              account, the User Content will be maintained by Personal.ai. Users
-              will have access to the User Content until 30 days after which
-              time the User Content will be permanently deleted.
+              account, the User Content will be maintained by Doppelgangers.ai.
+              Users will have access to the User Content until 30 days after
+              which time the User Content will be permanently deleted.
             </p>
           </div>
 
@@ -201,21 +201,21 @@ export default function Terms() {
               All contents of the Doppelgangers.ai Website and Doppelgangers.ai
               Services including but not limited to logo, design, text,
               software, other files, and their selection and arrangement and
-              Doppelgangers.ai Confidential Information belong to Personal.ai,
-              and/or its suppliers or licensors. Doppelgangers.ai or its
-              licensors own and reserve all right, title and interest in and to
-              the Doppelgangers.ai Services and all software and other items
-              used to provide the Doppelgangers.ai Services, other than the
-              rights we expressly grant to you to use the Doppelgangers.ai
-              Services and Doppelgangers.ai Confidential Information. No title
-              to or ownership of any proprietary rights related to the
-              Doppelgangers.ai Services or Doppelgangers.ai Confidential
-              Information is transferred to you pursuant to these Terms. If you
-              provide comments, suggestions and recommendations to
+              Doppelgangers.ai Confidential Information belong to
+              Doppelgangers.ai, and/or its suppliers or licensors.
+              Doppelgangers.ai or its licensors own and reserve all right, title
+              and interest in and to the Doppelgangers.ai Services and all
+              software and other items used to provide the Doppelgangers.ai
+              Services, other than the rights we expressly grant to you to use
+              the Doppelgangers.ai Services and Doppelgangers.ai Confidential
+              Information. No title to or ownership of any proprietary rights
+              related to the Doppelgangers.ai Services or Doppelgangers.ai
+              Confidential Information is transferred to you pursuant to these
+              Terms. If you provide comments, suggestions and recommendations to
               Doppelgangers.ai about the Doppelgangers.ai Services (e.g.,
               modifications, enhancements, improvements) (collectively,
-              "Feedback"), you are automatically assigning this Feedback to
-              Personal.ai.
+              &quot;Feedback&quot;), you are automatically assigning this
+              Feedback to Doppelgangers.ai.
             </p>
           </div>
 
@@ -231,8 +231,8 @@ export default function Terms() {
             <ul className='list-disc pl-6 space-y-2 text-sm md:text-base text-gray-300'>
               <li>
                 access or tamper with the Doppelgangers.ai Services,
-                Doppelgangers.ai's computer systems, or the technical delivery
-                systems of Doppelgangers.ai's providers;
+                Doppelgangers.ai&apos;s computer systems, or the technical
+                delivery systems of Doppelgangers.ai&apos;s providers;
               </li>
               <li>
                 probe, scan, or test the vulnerability of any system or network
@@ -240,7 +240,8 @@ export default function Terms() {
               </li>
               <li>
                 access or search the Doppelgangers.ai Services by any means
-                other than Doppelgangers.ai's publicly supported interfaces;
+                other than Doppelgangers.ai&apos;s publicly supported
+                interfaces;
               </li>
               <li>
                 attempt to disrupt or overwhelm our infrastructure by
@@ -480,7 +481,7 @@ export default function Terms() {
               account is suspended or terminated, you may no longer have access
               to the User Content that is stored in the Doppelgangers.ai
               Services. Any termination of this Agreement shall not affect
-              Personal.ai&apos;s rights to any payments due to it.
+              Doppelgangers.ai&apos;s rights to any payments due to it.
               Doppelgangers.ai may terminate a free account at any time. Upon
               termination, you may request access to your User Content, which we
               will make available, except in cases where we have terminated your
@@ -490,7 +491,7 @@ export default function Terms() {
               with the Doppelgangers.ai Services may not be retrievable and we
               will have no obligation to maintain User Content stored in your
               account after this 14-day period. You may permanently delete User
-              Content by sending an email request to support@personal.ai.
+              Content by sending an email request to support@doppelgangers.ai.
             </p>
           </div>
 
@@ -499,23 +500,24 @@ export default function Terms() {
               11. WARRANTIES, DISCLAIMERS AND LIMITATION OF LIABILITY
             </h2>
             <p className='text-sm md:text-base leading-relaxed'>
-              THE DOPPELGANGERS.AI SERVICES, WHETHER PROVIDED BY PERSONAL.AI,
-              ITS LICENSORS OR ITS VENDORS, AND OTHER INFORMATION ON OR
-              ACCESSIBLE FROM THE DOPPELGANGERS.AI SERVICES ARE PROVIDED
-              &quot;AS IS&quot; WITHOUT WARRANTY, REPRESENTATION, CONDITION, OR
-              GUARANTEE OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT
-              NOT LIMITED TO ANY IMPLIED WARRANTIES, REPRESENTATIONS, CONDITIONS
-              OR GUARANTEES OF QUALITY, MERCHANTABILITY, FITNESS FOR A
-              PARTICULAR PURPOSE, OR NON-INFRINGEMENT, ALL OF WHICH ARE
-              DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. SPECIFICALLY,
-              BUT WITHOUT LIMITATION, DOPPELGANGERS.AI DOES NOT WARRANT THAT:
-              (i) THE INFORMATION AVAILABLE ON THE DOPPELGANGERS.AI SERVICES IS
-              FREE OF ERRORS; (ii) THE FUNCTIONS OR FEATURES (INCLUDING BUT NOT
-              LIMITED TO MECHANISMS FOR THE DOWNLOADING AND UPLOADING OF USER
-              CONTENT) WILL BE UNINTERRUPTED, SECURE, OR FREE OF ERRORS; (iii)
-              DEFECTS WILL BE CORRECTED, OR (iv) THE DOPPELGANGERS.AI SERVICES
-              OR THE SERVER(S) THAT MAKE THE DOPPELGANGERS.AI SERVICES AVAILABLE
-              ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. IN NO EVENT SHALL
+              THE DOPPELGANGERS.AI SERVICES, WHETHER PROVIDED BY
+              DOPPELGANGERS.AI, ITS LICENSORS OR ITS VENDORS, AND OTHER
+              INFORMATION ON OR ACCESSIBLE FROM THE DOPPELGANGERS.AI SERVICES
+              ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY, REPRESENTATION,
+              CONDITION, OR GUARANTEE OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+              INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES,
+              REPRESENTATIONS, CONDITIONS OR GUARANTEES OF QUALITY,
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+              NON-INFRINGEMENT, ALL OF WHICH ARE DISCLAIMED TO THE FULLEST
+              EXTENT PERMITTED BY LAW. SPECIFICALLY, BUT WITHOUT LIMITATION,
+              DOPPELGANGERS.AI DOES NOT WARRANT THAT: (i) THE INFORMATION
+              AVAILABLE ON THE DOPPELGANGERS.AI SERVICES IS FREE OF ERRORS; (ii)
+              THE FUNCTIONS OR FEATURES (INCLUDING BUT NOT LIMITED TO MECHANISMS
+              FOR THE DOWNLOADING AND UPLOADING OF USER CONTENT) WILL BE
+              UNINTERRUPTED, SECURE, OR FREE OF ERRORS; (iii) DEFECTS WILL BE
+              CORRECTED, OR (iv) THE DOPPELGANGERS.AI SERVICES OR THE SERVER(S)
+              THAT MAKE THE DOPPELGANGERS.AI SERVICES AVAILABLE ARE FREE OF
+              VIRUSES OR OTHER HARMFUL COMPONENTS. IN NO EVENT SHALL
               DOPPELGANGERS.AI OR ITS LICENSORS, VENDORS, OR ANY OF THEIR
               RESPECTIVE DIRECTORS, OFFICERS, EMPLOYEES, AGENTS, OR OTHER
               REPRESENTATIVES BE LIABLE TO YOU OR ANY OTHER PERSON OR ENTITY FOR
