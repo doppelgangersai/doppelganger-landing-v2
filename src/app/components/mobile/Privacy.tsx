@@ -26,6 +26,8 @@ export default function Privacy() {
           alt='Privacy'
           width={356}
           height={678}
+          unoptimized
+          quality={100}
         />
       </div>
     </section>
