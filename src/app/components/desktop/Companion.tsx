@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import Image from 'next/image';
+import { useRef } from 'react';
+import LaunchAppButton from './components/LaunchAppButton';
 
 export default function Companion() {
   const sectionRef = useRef(null);
@@ -17,15 +18,13 @@ export default function Companion() {
     >
       <div className='flex justify-center items-center pt-[44px]'>
         <h1 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-white'>
-          Create Your Personal
-          <br />
           <motion.span
             initial={{ color: '#FFFFFF' }}
             animate={isInView ? { color: '#6C3AF8' } : { color: '#FFFFFF' }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeInOut' }}
             className='text-[#6C3AF8]'
           >
-            AI Companion
+            AI Assistant
           </motion.span>
         </h1>
       </div>
@@ -71,7 +70,7 @@ export default function Companion() {
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full text-center'
+            className='font-montserrat font-[300] text-[32px] leading-[39px] text-white w-full text-center mb-[54px]'
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.6 }}
@@ -80,18 +79,7 @@ export default function Companion() {
             model, built to enhance your daily life.
           </motion.h2>
 
-          <motion.button
-            className='flex flex-row justify-center items-center px-6 py-2 gap-2 w-[218px] h-[44px] bg-[#6C3AF8] rounded-[20px] mt-[54px]'
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 1.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className='font-roboto font-normal text-xs text-white'>
-              Download App
-            </span>
-          </motion.button>
+          <LaunchAppButton />
         </motion.div>
       </div>
 

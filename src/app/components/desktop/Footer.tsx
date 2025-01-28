@@ -2,35 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 
 export default function Footer() {
-  const footerRef = useRef(null);
-  const isInView = useInView(footerRef, { once: true, amount: 0.3 });
-
   return (
-    <footer
-      ref={footerRef}
-      className='relative h-screen w-[1440px] m-auto scroll-smooth'
-    >
+    <footer className='relative h-screen w-[1440px] m-auto scroll-smooth'>
       {/* Main Container */}
       <div className='container mx-auto h-full'>
         <div className='grid h-full grid-cols-12 gap-4 relative'>
           {/* Concentric Circles */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-            }
-            transition={{
-              duration: 1.2,
-              type: 'spring',
-              bounce: 0.4,
-            }}
-            className='absolute left-[15%] top-1/2 -translate-y-1/2'
-          >
+          <div className='absolute left-[15%] top-1/2 -translate-y-1/2'>
             {[...Array(24)].map((_, i) => (
               <div
                 key={i}
@@ -72,54 +52,54 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Navigation Links with stagger animation */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'
-          >
+          {/* Navigation Links */}
+          <div className='font-sans col-span-5 col-start-8 flex justify-end items-center gap-11 z-10'>
             <div className='flex flex-row items-top justify-center gap-10'>
               {/* Help Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className='flex flex-col items-end'
-              >
+              <div className='flex flex-col items-end'>
                 <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
                   Help
                 </h3>
                 <ul className='space-y-1 text-right'>
-                  {['Referral Program', 'Contact Us', 'FAQ'].map((item) => (
+                  {[
+                    {
+                      title: 'Contact Us',
+                      url: 'mailto:support@doppelgangers.ai',
+                      isEmail: true,
+                    },
+                    { title: 'FAQ', url: '/' },
+                  ].map((item) => (
                     <li
-                      key={item}
+                      key={item.title}
                       className='opacity-50 hover:opacity-100 transition-opacity'
                     >
-                      <Link
-                        href='#'
-                        className='text-white text-[14px] font-light'
-                      >
-                        {item}
-                      </Link>
+                      {item.isEmail ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = item.url;
+                          }}
+                          className='text-white text-[14px] font-light cursor-pointer'
+                        >
+                          {item.title}
+                        </button>
+                      ) : (
+                        <Link
+                          href={item.url}
+                          className='text-white text-[14px] font-light'
+                        >
+                          {item.title}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Legal Info Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className='flex flex-col items-end'
-              >
+              <div className='flex flex-col items-end'>
                 <h3 className='text-white font-[800] text-[20px] mb-2 h-[24px]'>
                   Legal Info
                 </h3>
@@ -127,7 +107,6 @@ export default function Footer() {
                   {[
                     { link: 'terms', title: 'Terms & Conditions' },
                     { link: 'privacy', title: 'Privacy Policy' },
-                    { link: 'about', title: 'About Us' },
                   ].map((item) => (
                     <li
                       key={item.title}
@@ -142,50 +121,48 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Follow Us Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className='flex flex-col items-end'
-              >
+              <div className='flex flex-col items-end'>
                 <h3 className='text-white font-extrabold text-[20px] mb-2 h-[24px]'>
                   Follow Us
                 </h3>
                 <ul className='space-y-1 text-right'>
-                  {['Facebook', 'Instagram', 'LinkedIn', 'X'].map((item) => (
+                  {[
+                    {
+                      title: 'Instagram',
+                      url: 'https://www.instagram.com/doppelgangerscommunity/',
+                    },
+                    {
+                      title: 'LinkedIn',
+                      url: 'https://www.linkedin.com/company/doppelgangersai/',
+                    },
+                    { title: 'X', url: 'https://x.com/Doppelgangerai' },
+                  ].map((item) => (
                     <li
-                      key={item}
+                      key={item.title}
                       className='opacity-50 hover:opacity-100 transition-opacity'
                     >
                       <Link
-                        href='#'
+                        href={item.url}
                         className='text-white text-[14px] font-light'
                       >
-                        {item}
+                        {item.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Copyright Section with fade up animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className='absolute bottom-20 right-0 left-0 flex justify-end px-4 z-10'
-          >
+          {/* Copyright Section */}
+          <div className='absolute bottom-20 right-0 left-0 flex justify-end px-4 z-10'>
             <p className='text-white/50 text-[14px] font-light'>
               © 2024 Doppelgangers.ai All right reserved
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </footer>

@@ -36,10 +36,13 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className='flex items-center gap-6 mb-16'>
-            <a href='#' className='hover:opacity-80'>
+            <a href='https://x.com/Doppelgangerai' className='hover:opacity-80'>
               <Image src='/twitter.png' alt='Twitter' width={30} height={30} />
             </a>
-            <a href='#' className='hover:opacity-80'>
+            <a
+              href='https://www.instagram.com/doppelgangerscommunity/'
+              className='hover:opacity-80'
+            >
               <Image
                 src='/instagram.png'
                 alt='Instagram'
@@ -59,17 +62,19 @@ export default function Footer() {
               <Image src='/discord.png' alt='Discord' width={30} height={30} />
             </a>
             <span className='mx-4 text-white'>|</span>
-            <a href='#' className='hover:opacity-80'>
+            <button
+              onClick={() =>
+                (window.location.href = 'mailto:support@doppelgangers.ai')
+              }
+              className='hover:opacity-80'
+            >
               <Image src='/email.svg' alt='Email' width={30} height={30} />
-            </a>
+            </button>
           </div>
 
           {/* Footer Links */}
           <div className='flex flex-col gap-4 text-[14px] justify-between text-white/80'>
             <div className='flex gap-8 mb-2 justify-between'>
-              <a href='#' className='hover:text-white'>
-                About Us
-              </a>
               <span>© 2024 Doppelgangers.ai</span>
             </div>
             <div className='flex gap-8 justify-between'>
