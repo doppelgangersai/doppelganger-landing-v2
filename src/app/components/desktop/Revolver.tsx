@@ -22,7 +22,7 @@ export const buttons: RevolverButton[] = [
     color: '#E27919',
   },
   {
-    name: 'Financial Advisor',
+    name: 'Therapist',
     description:
       'Your personalized mental wellness advisor that uses your personal data live streams to understand your mood, stress levels, and behavior patterns, offering real-time guidance.',
     icon: '/finance.png',

@@ -7,7 +7,7 @@ export default function CompanionMobile() {
         <h2 className='font-montserrat font-extrabold text-[45px] leading-[50px] text-center text-white'>
           Create Your Personal
           <br />
-          <span className='text-[#6C3AF8]'>AI Companion</span>
+          <span className='text-[#6C3AF8]'>AI Assistant</span>
         </h2>
       </div>
 

@@ -18,6 +18,8 @@ export default function Companion() {
     >
       <div className='flex justify-center items-center pt-[44px]'>
         <h1 className='font-montserrat font-extrabold text-[72px] leading-[80px] text-center text-white'>
+          Create Your Personal
+          <br />
           <motion.span
             initial={{ color: '#FFFFFF' }}
             animate={isInView ? { color: '#6C3AF8' } : { color: '#FFFFFF' }}
